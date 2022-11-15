@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GoormRailsApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	  <div>
+		  <% if student_signed_in? %>
+		  	<%= link_to "학생정보", edit_student_registration_path %>
+		  	<%= link_to "로그아웃", destroy_student_session_path, method: :delete %>
+		  	아이디 : <%= current_student.email %>
+		  <% else %>
+		  	<%= link_to "로그인", student_session_path %>
+		  	<%= link_to "회원가입", "/students/sign_up" %>
+	  </div>
+	  <hr/>
+	  
+	  <%= yield %>
+  </body>
+</html>

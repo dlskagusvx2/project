@@ -11,8 +11,6 @@ gem 'rails', '~> 5.2.4'
 gem 'pg'
 gem 'devise'
 gem 'puma', '~> 4.1'
-
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker

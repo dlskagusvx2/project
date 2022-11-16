@@ -1,0 +1,67 @@
+<%= form_with(model: class_list, local: true) do |form| %>
+  <% if class_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(class_list.errors.count, "error") %> prohibited this class_list from being saved:</h2>
+
+      <ul>
+      <% class_list.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :c_name %>
+    <%= form.text_field :c_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :credit %>
+    <%= form.text_field :credit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :classify %>
+    <%= form.text_field :classify %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_type %>
+    <%= form.text_field :sub_type %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sub_num %>
+    <%= form.text_field :sub_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :target_grade %>
+    <%= form.text_field :target_grade %>
+  </div>
+
+  <div class="field">
+    <%= form.label :limit_num %>
+    <%= form.text_field :limit_num %>
+  </div>
+
+  <div class="field">
+    <%= form.label :lecture_time %>
+    <%= form.text_field :lecture_time %>
+  </div>
+
+  <div class="field">
+    <%= form.label :department_id %>
+    <%= form.text_field :department_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :professor_id %>
+    <%= form.text_field :professor_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,2 @@
+module BbbsHelper
+end

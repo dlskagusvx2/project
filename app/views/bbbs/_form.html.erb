@@ -1,0 +1,22 @@
+<%= form_with(model: bbb, local: true) do |form| %>
+  <% if bbb.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bbb.errors.count, "error") %> prohibited this bbb from being saved:</h2>
+
+      <ul>
+      <% bbb.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :department_id %>
+    <%= form.text_field :department_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

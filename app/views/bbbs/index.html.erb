@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Bbbs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Department</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @bbbs.each do |bbb| %>
+      <tr>
+        <td><%= bbb.department %></td>
+        <td><%= link_to 'Show', bbb %></td>
+        <td><%= link_to 'Edit', edit_bbb_path(bbb) %></td>
+        <td><%= link_to 'Destroy', bbb, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bbb', new_bbb_path %>

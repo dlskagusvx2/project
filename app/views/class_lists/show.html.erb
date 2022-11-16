@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>C name:</strong>
+  <%= @class_list.c_name %>
+</p>
+
+<p>
+  <strong>Credit:</strong>
+  <%= @class_list.credit %>
+</p>
+
+<p>
+  <strong>Classify:</strong>
+  <%= @class_list.classify %>
+</p>
+
+<p>
+  <strong>Sub type:</strong>
+  <%= @class_list.sub_type %>
+</p>
+
+<p>
+  <strong>Sub num:</strong>
+  <%= @class_list.sub_num %>
+</p>
+
+<p>
+  <strong>Target grade:</strong>
+  <%= @class_list.target_grade %>
+</p>
+
+<p>
+  <strong>Limit num:</strong>
+  <%= @class_list.limit_num %>
+</p>
+
+<p>
+  <strong>Lecture time:</strong>
+  <%= @class_list.lecture_time %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @class_list.department %>
+</p>
+
+<p>
+  <strong>Professor:</strong>
+  <%= @class_list.professor %>
+</p>
+
+<%= link_to 'Edit', edit_class_list_path(@class_list) %> |
+<%= link_to 'Back', class_lists_path %>

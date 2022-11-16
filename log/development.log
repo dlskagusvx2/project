@@ -141,3 +141,349 @@ Processing by Rails::WelcomeController#index as HTML
 Completed 200 OK in 32ms (Views: 6.7ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateDepartments (20221116085408)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (38.5ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "dep_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221116085408_create_departments.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn (20221116090021)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn (20221116090021)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (19.8ms)[0m  [1m[35mDROP TABLE "students"[0m
+  ↳ db/migrate/20221116090021_change_column.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "departments"[0m
+  ↳ db/migrate/20221116090021_change_column.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116090021"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (3.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateDepartments (20221116090411)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (42.7ms)[0m  [1m[35mCREATE TABLE "departments" ("id" bigserial primary key, "dep_name" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221116090411_create_departments.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116090411"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateProfessors (20221116090623)
+  [1m[35m (70.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (36.9ms)[0m  [1m[35mCREATE TABLE "professors" ("id" bigserial primary key, "pro_name" character varying, "department_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_499c232ad6"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+)[0m
+  ↳ db/migrate/20221116090623_create_professors.rb:3
+  [1m[35m (18.6ms)[0m  [1m[35mCREATE  INDEX  "index_professors_on_department_id" ON "professors"  ("department_id")[0m
+  ↳ db/migrate/20221116090623_create_professors.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116090623"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateClassLists (20221116091220)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateClassLists (20221116091220)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (96.6ms)[0m  [1m[35mCREATE TABLE "class_lists" ("id" bigserial primary key, "c_name" character varying, "credit" integer, "classify" character varying, "sub_type" character varying, "sub_num" integer, "target_grade" integer, "limit_num" integer, "lecture_time" character varying, "department_id" bigint, "professor_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_48c6d58893"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+, CONSTRAINT "fk_rails_60753b8d52"
+FOREIGN KEY ("professor_id")
+  REFERENCES "professors" ("id")
+)[0m
+  ↳ db/migrate/20221116091220_create_class_lists.rb:3
+  [1m[35m (11.0ms)[0m  [1m[35mCREATE  INDEX  "index_class_lists_on_department_id" ON "class_lists"  ("department_id")[0m
+  ↳ db/migrate/20221116091220_create_class_lists.rb:3
+  [1m[35m (18.9ms)[0m  [1m[35mCREATE  INDEX  "index_class_lists_on_professor_id" ON "class_lists"  ("professor_id")[0m
+  ↳ db/migrate/20221116091220_create_class_lists.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116091220"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to DeviseCreateAttendees (20221116092923)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (37.6ms)[0m  [1m[35mCREATE TABLE "attendees" ("id" bigserial primary key, "email" character varying DEFAULT '' NOT NULL, "encrypted_password" character varying DEFAULT '' NOT NULL, "reset_password_token" character varying, "reset_password_sent_at" timestamp, "remember_created_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20221116092923_devise_create_attendees.rb:5
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_attendees_on_email" ON "attendees"  ("email")[0m
+  ↳ db/migrate/20221116092923_devise_create_attendees.rb:39
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_attendees_on_reset_password_token" ON "attendees"  ("reset_password_token")[0m
+  ↳ db/migrate/20221116092923_devise_create_attendees.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116092923"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (9.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn (20221116093046)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_name" character varying[0m
+  ↳ db/migrate/20221116093046_change_column.rb:3
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_num" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "attendees" ADD "grade" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "attendees" ADD "admin" boolean[0m
+  ↳ db/migrate/20221116093046_change_column.rb:6
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+[0m
+  ↳ db/migrate/20221116093046_change_column.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn (20221116093046)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_name" character varying[0m
+  ↳ db/migrate/20221116093046_change_column.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_num" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "attendees" ADD "grade" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:5
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "attendees" ADD "admin" boolean[0m
+  ↳ db/migrate/20221116093046_change_column.rb:6
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+[0m
+  ↳ db/migrate/20221116093046_change_column.rb:7
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn (20221116093046)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_name" character varying[0m
+  ↳ db/migrate/20221116093046_change_column.rb:3
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "attendees" ADD "a_num" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:4
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "attendees" ADD "grade" integer[0m
+  ↳ db/migrate/20221116093046_change_column.rb:5
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "attendees" ADD "admin" boolean[0m
+  ↳ db/migrate/20221116093046_change_column.rb:6
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221116093046"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (70.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn2 (20221116094523)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "articles" ADD CONSTRAINT "fk_rails_e74ce85cbc"
+FOREIGN KEY ("author_id")
+  REFERENCES "authors" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (80.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn2 (20221116094523)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (9.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn2 (20221116094523)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "attendees" ADD "departments_id" bigint[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE  INDEX  "index_attendees_on_departments_id" ON "attendees"  ("departments_id")[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (1.3ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (65.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn2 (20221116094523)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "attendees" ADD "departments_id" bigint[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (88.7ms)[0m  [1m[35mCREATE  INDEX  "index_attendees_on_departments_id" ON "attendees"  ("departments_id")[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ChangeColumn2 (20221116094523)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mALTER TABLE "attendees" ADD "departments_id" bigint[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE  INDEX  "index_attendees_on_departments_id" ON "attendees"  ("departments_id")[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "attendees" ADD CONSTRAINT "fk_rails_fad70cfa5e"
+FOREIGN KEY ("department_id")
+  REFERENCES "departments" ("id")
+ ON DELETE CASCADE[0m
+  ↳ db/migrate/20221116094523_change_column2.rb:4
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @class_status.status %>
+</p>
+
+<p>
+  <strong>Score:</strong>
+  <%= @class_status.score %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @class_status.student %>
+</p>
+
+<p>
+  <strong>Class list:</strong>
+  <%= @class_status.class_list %>
+</p>
+
+<%= link_to 'Edit', edit_class_status_path(@class_status) %> |
+<%= link_to 'Back', class_statuses_path %>

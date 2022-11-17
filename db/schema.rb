@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_16_133808) do
+ActiveRecord::Schema.define(version: 2022_11_17_071222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,17 @@ ActiveRecord::Schema.define(version: 2022_11_16_133808) do
     t.datetime "updated_at", null: false
     t.index ["department_id"], name: "index_class_lists_on_department_id"
     t.index ["professor_id"], name: "index_class_lists_on_professor_id"
+  end
+
+  create_table "class_statuses", force: :cascade do |t|
+    t.string "status"
+    t.integer "score"
+    t.bigint "student_id"
+    t.bigint "class_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["class_list_id"], name: "index_class_statuses_on_class_list_id"
+    t.index ["student_id"], name: "index_class_statuses_on_student_id"
   end
 
   create_table "departments", force: :cascade do |t|
@@ -55,6 +66,10 @@ ActiveRecord::Schema.define(version: 2022_11_16_133808) do
     t.bigint "department_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "s_name"
+    t.integer "s_num"
+    t.integer "grade"
+    t.boolean "admin"
     t.index ["department_id"], name: "index_students_on_department_id"
     t.index ["email"], name: "index_students_on_email", unique: true
     t.index ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
@@ -62,6 +77,8 @@ ActiveRecord::Schema.define(version: 2022_11_16_133808) do
 
   add_foreign_key "class_lists", "departments"
   add_foreign_key "class_lists", "professors"
+  add_foreign_key "class_statuses", "class_lists"
+  add_foreign_key "class_statuses", "students"
   add_foreign_key "professors", "departments"
   add_foreign_key "students", "departments"
 end

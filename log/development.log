@@ -711,3 +711,169 @@ Migrating to Attendee (20221116133808)
   ↳ /usr/local/bin/rake:23
   [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
   ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateClassStatuses (20221117070416)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "class_statuses" ("id" bigserial primary key, "status" character varying, "score" integer, "student_id" bigint, "class_list_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_eeab08e77e"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+, CONSTRAINT "fk_rails_63f41a75de"
+FOREIGN KEY ("class_list_id")
+  REFERENCES "class_lists" ("id")
+)[0m
+  ↳ db/migrate/20221117070416_create_class_statuses.rb:3
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (58.7ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to ClassStatus (20221117070819)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (261.9ms)[0m  [1m[35mDROP TABLE "class_statuses"[0m
+  ↳ db/migrate/20221117070819_class_status.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221117070819"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (35.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (15.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Migrating to CreateClassStatuses (20221117071222)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (346.8ms)[0m  [1m[35mCREATE TABLE "class_statuses" ("id" bigserial primary key, "status" character varying, "score" integer, "student_id" bigint, "class_list_id" bigint, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_eeab08e77e"
+FOREIGN KEY ("student_id")
+  REFERENCES "students" ("id")
+, CONSTRAINT "fk_rails_63f41a75de"
+FOREIGN KEY ("class_list_id")
+  REFERENCES "class_lists" ("id")
+)[0m
+  ↳ db/migrate/20221117071222_create_class_statuses.rb:3
+  [1m[35m (77.1ms)[0m  [1m[35mCREATE  INDEX  "index_class_statuses_on_student_id" ON "class_statuses"  ("student_id")[0m
+  ↳ db/migrate/20221117071222_create_class_statuses.rb:3
+  [1m[35m (78.6ms)[0m  [1m[35mCREATE  INDEX  "index_class_statuses_on_class_list_id" ON "class_statuses"  ("class_list_id")[0m
+  ↳ db/migrate/20221117071222_create_class_statuses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20221117071222"]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (30.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(8575728061014197160)[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+Started GET "/?t=1668669452870" for 172.17.0.1 at 2022-11-17 07:17:32 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"t"=>"1668669452870"}
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (4.2ms)
+Completed 200 OK in 104ms (Views: 29.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?t=1668669452870" for 172.17.0.1 at 2022-11-17 07:17:34 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"t"=>"1668669452870"}
+  Rendering /usr/local/lib/ruby/gems/2.6.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/local/lib/ruby/gems/2.6.0/gems/railties-5.2.8.1/lib/rails/templates/rails/welcome/index.html.erb (1.9ms)
+Completed 200 OK in 6ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/?t=1668669452870" for 172.17.0.1 at 2022-11-17 07:18:01 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668669452870"}
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (7.0ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:23
+  Rendered class_lists/index.html.erb within layouts/application (94.9ms)
+Completed 500 Internal Server Error in 306ms (ActiveRecord: 87.5ms)
+
+
+  
+SyntaxError (/workspace/1117/app/views/layouts/application.html.erb:29: syntax error, unexpected ensure, expecting end
+          ensure
+          ^~~~~~
+/workspace/1117/app/views/layouts/application.html.erb:31: syntax error, unexpected end-of-input, expecting end):
+  
+app/views/layouts/application.html.erb:29: syntax error, unexpected ensure, expecting end
+app/views/layouts/application.html.erb:31: syntax error, unexpected end-of-input, expecting end
+Started GET "/?t=1668669452870" for 172.17.0.1 at 2022-11-17 07:18:35 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668669452870"}
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:23
+  Rendered class_lists/index.html.erb within layouts/application (2.6ms)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /workspace/1117/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+[Webpacker] Hash: 15d1bb7b54cf6326b9ba
+Version: webpack 4.43.0
+Time: 16180ms
+Built at: 2022-11-17 7:19:00 ├F10: AM┤
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-9afcbb5693aa87623e69.js    124 KiB  application  [emitted] [immutable]  application
+js/application-9afcbb5693aa87623e69.js.map    139 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-9afcbb5693aa87623e69.js js/application-9afcbb5693aa87623e69.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 749 bytes {application} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 3 hidden modules
+
+Completed 200 OK in 25253ms (Views: 25251.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?t=1668669452870" for 172.17.0.1 at 2022-11-17 07:29:35 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668669452870"}
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.9ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (3.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 81.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/departments" for 172.17.0.1 at 2022-11-17 07:29:49 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by DepartmentsController#index as HTML
+  Rendering departments/index.html.erb within layouts/application
+  [1m[36mDepartment Load (2.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/departments/index.html.erb:14
+  Rendered departments/index.html.erb within layouts/application (113.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 129ms (Views: 113.5ms | ActiveRecord: 9.2ms)
+
+

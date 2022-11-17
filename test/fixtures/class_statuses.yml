@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  status: MyString
+  score: 1
+  student: one
+  class_list: one
+
+two:
+  status: MyString
+  score: 1
+  student: two
+  class_list: two

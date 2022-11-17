@@ -5,16 +5,17 @@
 <table>
   <thead>
     <tr>
-      <th>C name</th>
-      <th>Credit</th>
-      <th>Classify</th>
-      <th>Sub type</th>
-      <th>Sub num</th>
-      <th>Target grade</th>
-      <th>Limit num</th>
-      <th>Lecture time</th>
-      <th>Department</th>
-      <th>Professor</th>
+	  <th>신청</th>
+      <th>이수 구분</th>
+      <th>과목 번호</th>
+      <th>과목 명</th>
+	  <th>개설 학과</th>
+	  <th>대상 학년</th>
+      <th>학점</th>
+      <th>담당 교수</th>
+      <th>강의시간</th>
+      <th>제한 인원</th>
+
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -22,19 +23,18 @@
   <tbody>
     <% @class_lists.each do |class_list| %>
       <tr>
-        <td><%= class_list.c_name %></td>
-        <td><%= class_list.credit %></td>
-        <td><%= class_list.classify %></td>
-        <td><%= class_list.sub_type %></td>
-        <td><%= class_list.sub_num %></td>
-        <td><%= class_list.target_grade %></td>
-        <td><%= class_list.limit_num %></td>
-        <td><%= class_list.lecture_time %></td>
-        <td><%= class_list.department %></td>
+		<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id })%></td>
+		<td><%= class_list.classify %></td>
+		<td><%= class_list.sub_num %></td>
+		<td><%= class_list.c_name %></td>
+		<td><%= class_list.department %></td>
+		<td><%= class_list.target_grade %></td>
+		<td><%= class_list.credit %></td>
         <td><%= class_list.professor %></td>
-        <td><%= link_to 'Show', class_list %></td>
-        <td><%= link_to 'Edit', edit_class_list_path(class_list) %></td>
-        <td><%= link_to 'Destroy', class_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= class_list.lecture_time %></td>
+        <td><%= Class_Status.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td>
+		
+		  
       </tr>
     <% end %>
   </tbody>

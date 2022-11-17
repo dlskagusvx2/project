@@ -21,6 +21,15 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+<div class="field">
+	<%= f.label :department_id %><br />
+	<select>
+		<%= Department.each do |dep| %>
+		  <option><%= dep.dep_name%></option>
+		<% end %>
+	</select>
+</div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>

@@ -7,3 +7,4 @@ end
 def my_dep
 	Department.where(dep_id: self.department_id).dep_name
 end
+

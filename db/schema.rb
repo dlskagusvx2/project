@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_11_17_071222) do
+ActiveRecord::Schema.define(version: 2022_11_20_064430) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_11_17_071222) do
   end
 
   create_table "class_statuses", force: :cascade do |t|
-    t.string "status"
+    t.string "status", default: "신청"
     t.integer "score"
     t.bigint "student_id"
     t.bigint "class_list_id"

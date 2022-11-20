@@ -32,14 +32,90 @@
 		<td><%= class_list.credit %></td>
         <td><%= class_list.professor.pro_name %></td>
         <td><%= class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td>
-		
-		  
+        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Class List', new_class_list_path %>
+
+<br>
+<br>
+
+<h1>수강 확정내역</h1>
+<table>
+  <thead>
+    <tr>
+	  <th>삭제</th>
+      <th>이수 구분</th>
+      <th>과목 번호</th>
+      <th>과목 명</th>
+	  <th>개설 학과</th>
+	  <th>대상 학년</th>
+      <th>학점</th>
+      <th>담당 교수</th>
+      <th>강의시간</th>
+      <th>제한 인원</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_class_lists.each do |class_list| %>
+	  <tr>
+		<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
+		<td><%= class_list.class_list.classify %></td>
+		<td><%= class_list.class_list.sub_num %></td>
+		<td><%= class_list.class_list.c_name %></td>
+		<td><%= class_list.class_list.department.dep_name%></td>
+		<td><%= class_list.class_list.target_grade %></td>
+		<td><%= class_list.class_list.credit %></td>
+        <td><%= class_list.class_list.professor.pro_name %></td>
+        <td><%= class_list.class_list.lecture_time %></td>
+        <td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
       </tr>
     <% end %>
   </tbody>
 </table>
 
+<h1>수강 대기내역</h1>
+<table>
+  <thead>
+    <tr>
+	  <th>삭제</th>
+      <th>이수 구분</th>
+      <th>과목 번호</th>
+      <th>과목 명</th>
+	  <th>개설 학과</th>
+	  <th>대상 학년</th>
+      <th>학점</th>
+      <th>담당 교수</th>
+      <th>강의시간</th>
+      <th>제한 인원</th>
+
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @my_waiting_class_lists.each do |class_list| %>
+	  <tr>
+		<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
+		<td><%= class_list.class_list.classify %></td>
+		<td><%= class_list.class_list.sub_num %></td>
+		<td><%= class_list.class_list.c_name %></td>
+		<td><%= class_list.class_list.department.dep_name%></td>
+		<td><%= class_list.class_list.target_grade %></td>
+		<td><%= class_list.class_list.credit %></td>
+        <td><%= class_list.class_list.professor.pro_name %></td>
+        <td><%= class_list.class_list.lecture_time %></td>
+        <td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
 <br>
 
-<%= link_to 'New Class List', new_class_list_path %>

@@ -4,6 +4,21 @@ class ClassStatusesController < ApplicationController
   # GET /class_statuses or /class_statuses.json
   def index
     @class_statuses = ClassStatus.all
+	  
+	  @class_statuses.each do |class_status|
+		  @waiting_class_list = ClassStatus.where(class_list_id: class_status.class_list_id, status: "대기")
+		  if class_status.trnasfer?
+			  @waiting_class_list.each do |class_list| 
+					if class_status.full?
+						break
+					end
+
+					@waiting = class_list
+					@waiting.status = "신청"
+					@waiting.save
+				end
+		  end
+	  end
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json
@@ -24,12 +39,14 @@ class ClassStatusesController < ApplicationController
     @class_status = ClassStatus.new(class_status_params)
 
     respond_to do |format|
-      if @class_status.save
-        format.html { redirect_to class_status_url(@class_status), notice: "Class status was successfully created." }
-        format.json { render :show, status: :created, location: @class_status }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @class_status.errors, status: :unprocessable_entity }
+		if @class_status.overlap?
+			format.html {redirect_to root_path, notice: "중복신청은 되지 않습니다."}
+		elsif @class_status.full?
+			@class_status.status = "대기"
+			@class_status.save
+			format.html { redirect_to root_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
+		else @class_status.save
+        format.html { redirect_to root_path, notice: "강의 신청이 완료되었습니다." }
       end
     end
   end
@@ -52,7 +69,7 @@ class ClassStatusesController < ApplicationController
     @class_status.destroy
 
     respond_to do |format|
-      format.html { redirect_to class_statuses_url, notice: "Class status was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "강의신청이 취소되었습니다." }
       format.json { head :no_content }
     end
   end

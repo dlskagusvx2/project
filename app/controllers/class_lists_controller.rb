@@ -4,7 +4,8 @@ class ClassListsController < ApplicationController
   # GET /class_lists or /class_lists.json
   def index
     @class_lists = ClassList.all
-	  
+	@my_class_lists = ClassStatus.where(student_id: current_student.id, status: "신청")
+	@my_waiting_class_lists = ClassStatus.where(student_id: current_student.id, status: "대기")
   end
 
   # GET /class_lists/1 or /class_lists/1.json

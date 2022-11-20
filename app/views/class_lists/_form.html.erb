@@ -53,12 +53,12 @@
 
   <div class="field">
     <%= form.label :department_id %>
-    <%= form.text_field :department_id %>
+    <%= form.collection_select :department_id, Department.all, :id, :dep_name %>
   </div>
 
   <div class="field">
     <%= form.label :professor_id %>
-    <%= form.text_field :professor_id %>
+    <%= form.collection_select :professor_id, Professor.all, :id, :pro_name%>
   </div>
 
   <div class="actions">

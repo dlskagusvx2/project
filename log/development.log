@@ -1184,3 +1184,2541 @@ ActionView::Template::Error (undefined method `each' for #<Class:0x00007f2414e72
   
 app/views/devise/registrations/new.html.erb:27:in `block in _app_views_devise_registrations_new_html_erb___1574103554072656910_47453989067880'
 app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___1574103554072656910_47453989067880'
+Started GET "/?t=1668911042910" for 172.17.0.1 at 2022-11-20 02:24:00 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668911042910"}
+Completed 401 Unauthorized in 9ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 02:24:01 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (83.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 241ms (Views: 125.9ms | ActiveRecord: 23.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:24:05 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (128.3ms)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for #<Class:0x00007f02280a7068>):
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<select>
+    27: 		<%= Department.each do |dep| %>
+    28: 		  <option><%= dep.dep_name%></option>
+    29: 		<% end %>
+    30: 	</select>
+  
+app/views/devise/registrations/new.html.erb:27:in `block in _app_views_devise_registrations_new_html_erb___348471053143524203_69823619104080'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___348471053143524203_69823619104080'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:26:07 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mDepartment Load (2.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27
+  Rendered devise/shared/_links.html.erb (70.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (199.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 213ms (Views: 207.9ms | ActiveRecord: 4.1ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:26:35 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fV9KL/9KIo3rPfF0idItSRZrdEzWkdC7vn0+wvsEW6qu7hV+WNGdO8Hg2Zm3pM5c6WW8bxZBzQ5PlvnQLa3Mkg==", "student"=>{"email"=>"aaa@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (2.8ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "aaa@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.5ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1204ms (Views: 86.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/students" for 172.17.0.1 at 2022-11-20 02:39:59 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:40:42 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fV9KL/9KIo3rPfF0idItSRZrdEzWkdC7vn0+wvsEW6qu7hV+WNGdO8Hg2Zm3pM5c6WW8bxZBzQ5PlvnQLa3Mkg==", "student"=>{"email"=>"aaa@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (1.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "aaa@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.1ms)
+  [1m[36mDepartment Load (6.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (30.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1559ms (Views: 157.8ms | ActiveRecord: 89.7ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 02:40:47 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:40:49 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  [1m[36mDepartment Load (26.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (34.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 61ms (Views: 33.4ms | ActiveRecord: 26.9ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:41:01 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/WmXmwDNClLqKJ1LfDHWGbhwIsBtiXegJ3ZtQrCEyKERDZukUu3jQWR09iG6SYUqqgFBrsdNz/pIf+afBlDPEw==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (70.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:27
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1357ms (Views: 92.9ms | ActiveRecord: 72.1ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 02:47:39 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (69.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (73.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 89ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:47:40 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/registrations/new.html.erb within layouts/application (53.0ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/workspace/1117/app/views/devise/registrations/new.html.erb:27: syntax error, unexpected '<', expecting ')'
+</div>
+^
+/workspace/1117/app/views/devise/registrations/new.html.erb:31: unknown regexp options - dv
+/workspace/1117/app/views/devise/registrations/new.html.erb:31: unmatched close parenthesis: /div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" );@output_buffer.safe_append='
+  </i
+/workspace/1117/app/views/devise/registrations/new.html.erb:39: unterminated string meets end of file
+          end
+              ^
+/workspace/1117/app/views/devise/registrations/new.html.erb:39: syntax error, unexpected end-of-input, expecting ')'):
+  
+app/views/devise/registrations/new.html.erb:27: syntax error, unexpected '<', expecting ')'
+app/views/devise/registrations/new.html.erb:31: unknown regexp options - dv
+app/views/devise/registrations/new.html.erb:31: unmatched close parenthesis: /div>
+app/views/devise/registrations/new.html.erb:39: unterminated string meets end of file
+app/views/devise/registrations/new.html.erb:39: syntax error, unexpected end-of-input, expecting ')'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:48:02 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (110.1ms)
+Completed 500 Internal Server Error in 117ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for :departments:Symbol
+Did you mean?  tap):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department %><br />
+    26: 	<%= f.collection_select :department_id, :departments, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb___348471053143524203_69823619557480'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___348471053143524203_69823619557480'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:49:09 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (3383.4ms)
+Completed 500 Internal Server Error in 3389ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `departments' for #<#<Class:0x00007f0228454b70>:0x00007f02286471f8>
+Did you mean?  departments_url):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department %><br />
+    26: 	<%= f.collection_select :department_id, departments, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb___348471053143524203_69823622164480'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___348471053143524203_69823622164480'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:50:00 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (15.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 2.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for #<Class:0x00007f02283f5350>
+Did you mean?  tap):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department %><br />
+    26: 	<%= f.collection_select :department_id, Department, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb___348471053143524203_69823686369100'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb___348471053143524203_69823686369100'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:50:26 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.7ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:50:42 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"i9NJQT38wIPSN4hJFBxML+OF3/rPuNi3zO0YV4YJtAtYYhYQmmd/NfjqoKQqaq86HIsX2Q9oxQI9Bt9FUKAjMw==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1140ms (Views: 88.7ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/students" for 172.17.0.1 at 2022-11-20 02:51:52 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/students" for 172.17.0.1 at 2022-11-20 02:51:58 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 02:52:00 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (63.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 123ms (Views: 77.0ms | ActiveRecord: 25.4ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:52:01 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (5.0ms)
+  [1m[36mDepartment Load (1.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (95.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 147ms (Views: 138.8ms | ActiveRecord: 7.0ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:52:12 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WhyyeaoNdhAgUJ9/vC951v8do0ZFMfcNFBXguis5Ege2eL5G+C2fA64M9BV6Vyrl7WzAKO/1T1d7HGtnne0VtQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (3.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (4.5ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1330ms (Views: 80.5ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 02:56:01 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (45.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (84.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 36.8ms | ActiveRecord: 132.1ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:56:09 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BBVARGw7xLDsNSs8baciy9J+GA0xOy8gi/jOlkK9o7XXpB8Vy6B7BsboA9FT0cHeLXDQLvHrMpV6EwmElBQ0jQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (94.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1476ms (Views: 179.8ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 02:56:28 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fokxrgf770/KBtxuzB+/VYIgfQUZyTAVyQM6HENI6jytOG7/oGBQ+eDb9IPyaVxAfS61JtkZLaA46P0OleF9BA==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"3"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (2.1ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  [1m[36mDepartment Load (3.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (18.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1389ms (Views: 94.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/students" for 172.17.0.1 at 2022-11-20 03:00:30 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:00:34 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 192ms (Views: 86.2ms | ActiveRecord: 10.4ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:00:35 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.4ms)
+  [1m[36mDepartment Load (2.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (35.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 118ms (Views: 111.3ms | ActiveRecord: 5.9ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:00:43 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G9cDxBL+gqoondjXPobpLUFOEjAX+kuGTCJv+B9Caiv3sw/7QN5ruabBs734/roeUz9xXr0+89wjK+QlqZZtmQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (73.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (78.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1133ms (Views: 88.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:01:45 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 187ms (Views: 23.3ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:01:47 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (2.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (94.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 109ms (Views: 98.8ms | ActiveRecord: 9.0ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:01:54 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NBWVd+rKkL3zN+H2wl7g/7g/PevJwJJOT84tNPMy3LzYcZlIuOp5rn1ripwEJrPMqk5ehWMEKhQgx6bpRebbDg==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (5.5ms)
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (13.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1202ms (Views: 89.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:05:11 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 15.5ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:05:12 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (94.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 98.7ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:05:20 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vMvlwptaPpogXWVvdwVMp3Tzni1pF9b6Ympfn67wtMNQr+n9yXrXia4BDgWxfR+UZoL9Q8PTbqANY9RCGCSzcQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (2.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (4.9ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  [1m[36mDepartment Load (57.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (65.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1272ms (Views: 27.2ms | ActiveRecord: 65.2ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:05:24 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QJduAH2PkBHiEToMaAoUKYXzG/sdoJRS5EGKmFvA0o6TJjFR2hQvp8jMEuFWfPc8ev3T2N1wiecVqk2KjWlFtg==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"2"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (93.0ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 208ms (Views: 103.8ms | ActiveRecord: 94.2ms)
+
+
+Started GET "/?t=1668913660928" for 172.17.0.1 at 2022-11-20 03:07:38 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668913660928"}
+Completed 401 Unauthorized in 7ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:07:38 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (80.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 150ms (Views: 94.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:07:41 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  [1m[36mDepartment Load (0.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (96.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 55.4ms | ActiveRecord: 58.5ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:07:50 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1brIN1E1tBel6TEToO4LZGZaJAeZR7oN/BD96ucrDpg53sQIAxVdBCu1WnlmllhXdCtHaTODAleTGXY3Uf8JKg==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (1.7ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (1.7ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.7ms)
+  [1m[36mDepartment Load (1.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1303ms (Views: 24.0ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:08:10 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VhCbBy6uanKzq4b7eObI8vXgwo6e3/VsyAdFgFYqzJWFocRWiTXVxJl2rhZGkCvnCu4KrV4P6Nk57IKSgINbrQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"3"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (69.9ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (79.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1356ms (Views: 24.7ms | ActiveRecord: 71.0ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:13:32 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:13:33 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (2833.1ms)
+Completed 500 Internal Server Error in 2837ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `departments' for #<#<Class:0x00007f8d6c3401d8>:0x00007f8d6c3a8620>
+Did you mean?  departments_url):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<%= f.collection_select :department_id, departments, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122691467760'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122691467760'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:16:40 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (3.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (67.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 81ms (Views: 75.5ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:19:22 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (73.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 83.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:19:26 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (97.8ms)
+Completed 500 Internal Server Error in 102ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `department_id' for #<Class:0x0000557021164d60>):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<%= f.collection_select Student.department_id, Department.all, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122656358900'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122656358900'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:19:30 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 83.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:19:32 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (121.9ms)
+Completed 500 Internal Server Error in 128ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `department_id' for #<Class:0x0000557021164d60>):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<%= f.collection_select Student.department_id, Department.all, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122694419820'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122694419820'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:21:08 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 67ms (Views: 65.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:21:17 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (29.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 45ms (Views: 43.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:21:19 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (27.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:21:34 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"dLXL6sDLTcOzt1sMLyYl42ZiWcOK24OuCVe+aD4IOqCY0cfVkuuk0D3rMGbpXnbQdBM6rSAfO/RmXjW1iNw9Eg==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (70.5ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.3ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (8.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1274ms (Views: 16.8ms | ActiveRecord: 71.6ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:21:47 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HaMurrwsRBZ+tYSFiKydfYVr2ukh+Nnm2WtsK4IAfLvOEnH/G7f7oFRorGi22n5oemUSyuEoxFMogKs5VKnrgw==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.7ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1140ms (Views: 96.6ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:21:58 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jjP/U2psg4xdBzlLDEpvNbIkmvgaOo2zr/j8Xnpx3M5dgqACzfc8OnfaEaYyPIwgTSpS29rqkAZeEztMrNhL9g==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1307ms (Views: 107.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/students" for 172.17.0.1 at 2022-11-20 03:22:38 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/students"):
+  
+actionpack (5.2.8.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.8.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.8.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.8.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.4) lib/rack/method_override.rb:24:in `call'
+rack (2.2.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.8.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.8.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.4) lib/rack/sendfile.rb:110:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.4) lib/rack/proxy.rb:78:in `call'
+railties (5.2.8.1) lib/rails/engine.rb:524:in `call'
+puma (4.3.12) lib/puma/configuration.rb:228:in `call'
+puma (4.3.12) lib/puma/server.rb:727:in `handle_request'
+puma (4.3.12) lib/puma/server.rb:476:in `process_client'
+puma (4.3.12) lib/puma/server.rb:332:in `block in run'
+puma (4.3.12) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:22:44 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (4.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 15.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:22:45 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (73.4ms)
+Completed 500 Internal Server Error in 79ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 4, expected 5..7)):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<%= collection_select :department_id, Department.all, :id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122623556080'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122623556080'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:23:53 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (37.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 52ms (Views: 50.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:23:55 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for :id:Symbol
+Did you mean?  tap):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label :department_id %><br />
+    26: 	<%= collection_select :department_id, Department.all, :id, :dep_name, prompt: true %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122692706080'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122692706080'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:25:20 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (59.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (62.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 88.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:25:22 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (9.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 50ms (Views: 48.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:25:34 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Ga1Yoqh1HgL3nvv8xQxRIO4MV6n0yKUb3XlMbJfSJwb1yVSd+lX3EXnCkJYDdAIT/H00x14MHUGycMexIQYgtA==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (58.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (66.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1310ms (Views: 83.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:26:55 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:26:55 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendered devise/registrations/new.html.erb within layouts/application (11.8ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `id' for #<Department::ActiveRecord_Relation:0x00007f8d5c0f5460>
+Did you mean?  ids):
+    23: 
+    24: <div class="field">
+    25: 	<%= f.label "학과" %><br />
+    26: 	<%= f.collection_select :department_id, Department.all, Department.all.id, :dep_name %>
+    27: </div>
+    28: 
+    29:   <div class="actions">
+  
+app/views/devise/registrations/new.html.erb:26:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_70122555613320'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_70122555613320'
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:27:37 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 17.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:27:39 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (0.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 22.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:27:50 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.6ms)
+  [1m[36mDepartment Load (4.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (14.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 85ms (Views: 79.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:28:32 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.9ms)
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (94.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 212ms (Views: 113.8ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:28:43 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"71tr1U6gApYsjH7HBsmfcZFYCnexuBKlB6j9DRYEdmU86jSE6Tu9IAZRVio4v3xkblbCVHFoDxD2QzofwK3hXQ==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+Unpermitted parameter: :department_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (1.2ms)
+  [1m[36mDepartment Load (2.3ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 1252ms (Views: 87.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 03:30:22 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.5ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 185ms (Views: 88.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 03:30:23 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  [1m[36mDepartment Load (0.8ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:26
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (99.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 120ms (Views: 40.5ms | ActiveRecord: 75.0ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 03:30:33 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kHw6PXC19rLZnlemaE36gLyQKPnD4aYFKQMnpGNeQ7h8GDYCIpUfoVfCPMyuNamzruFLl2klHl9GCqx51YpECg==", "student"=>{"email"=>"abc@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "abc@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Create (23.5ms)[0m  [1m[32mINSERT INTO "students" ("email", "encrypted_password", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "abc@naver.com"], ["encrypted_password", "$2a$12$m3fYPMacOmMXPzFdXhq8oOaGigjRTUYLtZxiMeXrCJMGgrfXQB1am"], ["department_id", 1], ["created_at", "2022-11-20 03:30:35.388909"], ["updated_at", "2022-11-20 03:30:35.388909"]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://teamproject-wghck.run.goorm.io/?t=1668913660928
+Completed 302 Found in 1486ms (ActiveRecord: 31.5ms)
+
+
+Started GET "/?t=1668913660928" for 172.17.0.1 at 2022-11-20 03:30:35 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668913660928"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (3.8ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (9.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 100ms (Views: 68.4ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/class_lists/new" for 172.17.0.1 at 2022-11-20 03:30:56 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#new as HTML
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/new.html.erb within layouts/application
+  Rendered class_lists/_form.html.erb (7.3ms)
+  Rendered class_lists/new.html.erb within layouts/application (12.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 124ms (Views: 23.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 04:49:38 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.9ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.9ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (71.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 81.4ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/class_lists/new" for 172.17.0.1 at 2022-11-20 04:49:40 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#new as HTML
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/new.html.erb within layouts/application
+  Rendered class_lists/_form.html.erb (7.2ms)
+  Rendered class_lists/new.html.erb within layouts/application (8.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 115ms (Views: 111.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 04:49:43 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (1.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 84ms (Views: 80.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:50:15 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (5.1ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  Rendered professors/index.html.erb within layouts/application (10.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 11.3ms | ActiveRecord: 8.6ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:50:18 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (39.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (2.4ms)
+  Rendered professors/new.html.erb within layouts/application (4.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 64ms (Views: 12.5ms | ActiveRecord: 42.7ms)
+
+
+Started GET "/?t=1668919841165" for 172.17.0.1 at 2022-11-20 04:50:41 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  Parameters: {"t"=>"1668919841165"}
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (4.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:50:50 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (81.3ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  Rendered professors/index.html.erb within layouts/application (83.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 95ms (Views: 10.2ms | ActiveRecord: 81.6ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:50:51 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  Rendered professors/_form.html.erb (2.6ms)
+  Rendered professors/new.html.erb within layouts/application (3.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 16.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:52:02 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.1ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (5.8ms)
+  Rendered professors/new.html.erb within layouts/application (7.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:52:10 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jrqGR1EylDYq8qbyMnWZSYR8xI9Py2kV3iLZz2T+CRNdC9kW9qkrgAAvjh8MA3pce3IMrI8bdKAvyR7dsleeKw==", "professor"=>{"pro_name"=>"김화선", "department_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (8.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (2.7ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "김화선"], ["department_id", 1], ["created_at", "2022-11-20 04:52:10.586968"], ["updated_at", "2022-11-20 04:52:10.586968"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/1
+Completed 302 Found in 25ms (ActiveRecord: 17.2ms)
+
+
+Started GET "/professors/1" for 172.17.0.1 at 2022-11-20 04:52:10 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (1.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:52:13 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (3.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:52:37 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (19.6ms)
+  Rendered professors/new.html.erb within layouts/application (20.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 28.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:52:43 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x+ALXeyBc18yKJMP/ZEBYxn3HOZDK7CAAE5cub8kny6Rt8kPzHcQn/d2Mr9UzrC/MCgfQlxyNNuaqJNMdmlTCA==", "professor"=>{"pro_name"=>"김성희", "department_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (81.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.4ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "김성희"], ["department_id", 1], ["created_at", "2022-11-20 04:52:43.984542"], ["updated_at", "2022-11-20 04:52:43.984542"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/2
+Completed 302 Found in 90ms (ActiveRecord: 85.4ms)
+
+
+Started GET "/professors/2" for 172.17.0.1 at 2022-11-20 04:52:44 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (2.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 10.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:52:46 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (25.7ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (29.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 17.6ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:52:47 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (1.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (4.4ms)
+  Rendered professors/new.html.erb within layouts/application (5.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:52:50 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vyG3ZqRwsuNn5iUJs1ujaIjxyo7P8b+DnNLy6IDSUfXpdnU0hIbRI6K4hLkaBBK0oS7JKtCoO9gGND0dSZ+d0w==", "professor"=>{"pro_name"=>"김준석", "department_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.5ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "김준석"], ["department_id", 1], ["created_at", "2022-11-20 04:52:50.386993"], ["updated_at", "2022-11-20 04:52:50.386993"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/3
+Completed 302 Found in 37ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/professors/3" for 172.17.0.1 at 2022-11-20 04:52:50 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (2.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:52:51 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (11.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (6.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 14.1ms | ActiveRecord: 12.6ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:52:52 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (4.7ms)
+  Rendered professors/new.html.erb within layouts/application (6.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:52:55 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jllQT1oawDbDQWCEuH8Mr0JKBajjaFWCwaGyi8gyRZzYDpIdeuyj9gYfwTQRIL1za5UGDPwx0dlbR31+AX+Jug==", "professor"=>{"pro_name"=>"윤주상", "department_id"=>"1"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (80.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.5ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "윤주상"], ["department_id", 1], ["created_at", "2022-11-20 04:52:55.984545"], ["updated_at", "2022-11-20 04:52:55.984545"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/4
+Completed 302 Found in 90ms (ActiveRecord: 84.3ms)
+
+
+Started GET "/professors/4" for 172.17.0.1 at 2022-11-20 04:52:56 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (2.0ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:52:57 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (13.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 107ms (Views: 20.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:53:03 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (29.2ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (32.1ms)
+  Rendered professors/new.html.erb within layouts/application (33.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 42ms (Views: 10.6ms | ActiveRecord: 29.5ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:54:48 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nxDmbRqtzKi1pq+XaeLhHI2k8CY95lvs0EUceN/kQKvJRyQ/OluvaHD4DifAvVDApHvzgiK/37dKo9ONFqmMjQ==", "professor"=>{"pro_name"=>"박병철", "department_id"=>"2"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (77.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.6ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "박병철"], ["department_id", 2], ["created_at", "2022-11-20 04:54:48.684890"], ["updated_at", "2022-11-20 04:54:48.684890"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/5
+Completed 302 Found in 88ms (ActiveRecord: 82.0ms)
+
+
+Started GET "/professors/5" for 172.17.0.1 at 2022-11-20 04:54:48 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (4.9ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (7.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 20.7ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:54:49 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (5.9ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (1.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (1.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (17.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 19.1ms | ActiveRecord: 9.0ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:54:51 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (5.3ms)
+  Rendered professors/new.html.erb within layouts/application (6.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:55:35 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zy5lFkLXJd0xs7KRrC6cgWeCK44GeLgbxm8iQWHfAhWZeadEYiFGHfTtEyEFcS1dTl0oKhkhPEBcie20qJLOMw==", "professor"=>{"pro_name"=>"조일국", "department_id"=>"3"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (3.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.5ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "조일국"], ["department_id", 3], ["created_at", "2022-11-20 04:55:35.083519"], ["updated_at", "2022-11-20 04:55:35.083519"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/6
+Completed 302 Found in 12ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/professors/6" for 172.17.0.1 at 2022-11-20 04:55:35 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (1.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:55:36 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (89.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (97.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 106ms (Views: 12.8ms | ActiveRecord: 91.0ms)
+
+
+Started GET "/professors/new" for 172.17.0.1 at 2022-11-20 04:55:37 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#new as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/new.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/professors/_form.html.erb:21
+  Rendered professors/_form.html.erb (3.3ms)
+  Rendered professors/new.html.erb within layouts/application (36.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/professors" for 172.17.0.1 at 2022-11-20 04:56:14 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4+zg/YNt2kAPnfYP1E5kzcW4zdowFEfM++iyVa9oOja1uyKvo5u5gMrDV799EdUR7GfOfi9Nw5dhDn2gZiX2EA==", "professor"=>{"pro_name"=>"박광철", "department_id"=>"4"}, "commit"=>"Create Professor"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[36mProfessor Create (0.7ms)[0m  [1m[32mINSERT INTO "professors" ("pro_name", "department_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["pro_name", "박광철"], ["department_id", 4], ["created_at", "2022-11-20 04:56:15.088167"], ["updated_at", "2022-11-20 04:56:15.088167"]]
+  ↳ app/controllers/professors_controller.rb:27
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/professors_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/professors/7
+Completed 302 Found in 108ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/professors/7" for 172.17.0.1 at 2022-11-20 04:56:15 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/professors_controller.rb:63
+  Rendering professors/show.html.erb within layouts/application
+  [1m[36mDepartment Load (1.1ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/professors/show.html.erb:10
+  Rendered professors/show.html.erb within layouts/application (3.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 12.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/professors" for 172.17.0.1 at 2022-11-20 04:56:16 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ProfessorsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering professors/index.html.erb within layouts/application
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/professors/index.html.erb:15
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (0.7ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/professors/index.html.erb:18
+  Rendered professors/index.html.erb within layouts/application (14.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 82.2ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 04:57:02 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (2.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 86ms (Views: 82.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/class_lists/new" for 172.17.0.1 at 2022-11-20 04:57:07 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#new as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/new.html.erb within layouts/application
+  Rendered class_lists/_form.html.erb (6.1ms)
+  Rendered class_lists/new.html.erb within layouts/application (7.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 38ms (Views: 17.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/class_lists/new" for 172.17.0.1 at 2022-11-20 04:58:22 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#new as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/new.html.erb within layouts/application
+  [1m[36mDepartment Load (1.0ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/class_lists/_form.html.erb:56
+  [1m[36mProfessor Load (0.9ms)[0m  [1m[34mSELECT "professors".* FROM "professors"[0m
+  ↳ app/views/class_lists/_form.html.erb:61
+  Rendered class_lists/_form.html.erb (11.8ms)
+  Rendered class_lists/new.html.erb within layouts/application (57.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 72ms (Views: 66.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/class_lists" for 172.17.0.1 at 2022-11-20 05:07:15 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eMPrSpPU0/xti6+uvC5eh9/bM9xovI+cgE4vVYBsgeSrcrQbNE9sSkdWh0OCWL2SINX7/6hskilxpehHVsUW3A==", "class_list"=>{"c_name"=>"스마트 디바이스", "credit"=>"3", "classify"=>"전공 선택", "sub_type"=>"전공", "sub_num"=>"1", "target_grade"=>"3", "limit_num"=>"8", "lecture_time"=>"t1t2f3f4", "department_id"=>"1", "professor_id"=>"1"}, "commit"=>"Create Class list"}
+  [1m[36mStudent Load (1.0ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/class_lists_controller.rb:27
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_lists_controller.rb:27
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_lists_controller.rb:27
+  [1m[36mClassList Create (5.9ms)[0m  [1m[32mINSERT INTO "class_lists" ("c_name", "credit", "classify", "sub_type", "sub_num", "target_grade", "limit_num", "lecture_time", "department_id", "professor_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["c_name", "스마트 디바이스"], ["credit", 3], ["classify", "전공 선택"], ["sub_type", "전공"], ["sub_num", 1], ["target_grade", 3], ["limit_num", 8], ["lecture_time", "t1t2f3f4"], ["department_id", 1], ["professor_id", 1], ["created_at", "2022-11-20 05:07:15.589105"], ["updated_at", "2022-11-20 05:07:15.589105"]]
+  ↳ app/controllers/class_lists_controller.rb:27
+  [1m[35m (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/class_lists_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/class_lists/1
+Completed 302 Found in 101ms (ActiveRecord: 15.3ms)
+
+
+Started GET "/class_lists/1" for 172.17.0.1 at 2022-11-20 05:07:15 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassList Load (0.7ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" WHERE "class_lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_lists_controller.rb:63
+  Rendering class_lists/show.html.erb within layouts/application
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/show.html.erb:45
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/show.html.erb:50
+  Rendered class_lists/show.html.erb within layouts/application (3.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 11.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:07:18 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  Rendered class_lists/index.html.erb within layouts/application (10.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 1.6ms)
+
+
+  
+LoadError (Unable to autoload constant Class_Status, expected /workspace/1117/app/models/class_status.rb to define it):
+  
+app/views/class_lists/index.html.erb:35:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122689980260'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122689980260'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:10:38 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (18.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (22.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (50.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 12.2ms | ActiveRecord: 45.0ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:12:43 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.6ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (8.6ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 57.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:13:00 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (37.3ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  Rendered class_lists/index.html.erb within layouts/application (53.5ms)
+Completed 500 Internal Server Error in 60ms (ActiveRecord: 38.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for #<Department::ActiveRecord_Relation:0x00007f8d6c3b2648>):
+    27: 		<td><%= class_list.classify %></td>
+    28: 		<td><%= class_list.sub_num %></td>
+    29: 		<td><%= class_list.c_name %></td>
+    30: 		<td><%= Department.where(dep_id: class_list.department).dep_name%></td>
+    31: 		<td><%= class_list.target_grade %></td>
+    32: 		<td><%= class_list.credit %></td>
+    33:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:30:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122689969020'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122689969020'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:15:09 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (70.8ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE ClassList Load (0.0ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 698ms (ActiveRecord: 75.2ms)
+
+
+  
+  [1m[36mCACHE ClassList Load (0.0ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+NameError (undefined local variable or method `class_list' for #<ClassListsController:0x00007f8d700fef38>
+Did you mean?  @class_lists):
+  
+app/controllers/class_lists_controller.rb:7:in `index'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:15:53 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 606ms (ActiveRecord: 8.5ms)
+
+
+  
+  [1m[36mCACHE ClassList Load (0.0ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `department' for #<ClassListsController:0x00007f8d6c4c9950>
+Did you mean?  department_url):
+  
+app/controllers/class_lists_controller.rb:7:in `index'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:16:27 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 684ms (ActiveRecord: 69.8ms)
+
+
+  
+  [1m[36mCACHE ClassList Load (0.0ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `department_id' for #<ClassListsController:0x00007f8d5c095f60>
+Did you mean?  department_url
+               departments_url
+               department_path):
+  
+app/controllers/class_lists_controller.rb:7:in `index'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:19:00 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.6ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (108.4ms)
+Completed 500 Internal Server Error in 206ms (ActiveRecord: 10.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for nil:NilClass):
+    28: 		<td><%= class_list.classify %></td>
+    29: 		<td><%= class_list.sub_num %></td>
+    30: 		<td><%= class_list.c_name %></td>
+    31: 		<td><%= @my_dep.dep_name%></td>
+    32: 		<td><%= class_list.target_grade %></td>
+    33: 		<td><%= class_list.credit %></td>
+    34:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:31:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122692447520'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122692447520'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:19:24 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (5.0ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for nil:NilClass):
+    28: 		<td><%= class_list.classify %></td>
+    29: 		<td><%= class_list.sub_num %></td>
+    30: 		<td><%= class_list.c_name %></td>
+    31: 		<td><%= @my_dep.dep_name%></td>
+    32: 		<td><%= class_list.target_grade %></td>
+    33: 		<td><%= class_list.credit %></td>
+    34:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:31:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122622438440'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122622438440'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:20:16 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (48.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (96.1ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 50.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for #<Department::ActiveRecord_Relation:0x00007f8d6c8d21c8>):
+    28: 		<td><%= class_list.classify %></td>
+    29: 		<td><%= class_list.sub_num %></td>
+    30: 		<td><%= class_list.c_name %></td>
+    31: 		<td><%= @my_dep.dep_name%></td>
+    32: 		<td><%= class_list.target_grade %></td>
+    33: 		<td><%= class_list.credit %></td>
+    34:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:31:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122692959980'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122692959980'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:21:19 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (4.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (12.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 4.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for #<Department::ActiveRecord_Relation:0x00007f8d640fd018>):
+    28: 		<td><%= class_list.classify %></td>
+    29: 		<td><%= class_list.sub_num %></td>
+    30: 		<td><%= class_list.c_name %></td>
+    31: 		<td><%= @my_dep.dep_name%></td>
+    32: 		<td><%= class_list.target_grade %></td>
+    33: 		<td><%= class_list.credit %></td>
+    34:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:31:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122622594560'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122622594560'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:22:55 +0000
+Cannot render console from 10.1.20.142! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 508ms (ActiveRecord: 3.9ms)
+
+
+  
+  [1m[36mCACHE ClassList Load (0.0ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mCACHE Department Load (0.0ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" LIMIT $1[0m  [["LIMIT", 11]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+NoMethodError (undefined method `department_id' for #<ClassListsController:0x00007f8d700fd5c0>
+Did you mean?  department_url
+               departments_url
+               department_path):
+  
+app/controllers/class_lists_controller.rb:8:in `index'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:27:22 +0000
+Cannot render console from 10.1.21.16! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (182.8ms)
+Completed 500 Internal Server Error in 295ms (ActiveRecord: 83.3ms)
+
+
+  
+ActionView::Template::Error (private method `my_dep' called for #<ClassList:0x00007f8d6c8be8a8>):
+    27: 		<td><%= class_list.classify %></td>
+    28: 		<td><%= class_list.sub_num %></td>
+    29: 		<td><%= class_list.c_name %></td>
+    30: 		<td><%= class_list.my_dep%></td>
+    31: 		<td><%= class_list.target_grade %></td>
+    32: 		<td><%= class_list.credit %></td>
+    33:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:30:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122656226740'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122656226740'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:31:34 +0000
+Cannot render console from 10.1.20.90! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  Rendered class_lists/index.html.erb within layouts/application (5.1ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `dep_name' for 1:Integer):
+    27: 		<td><%= class_list.classify %></td>
+    28: 		<td><%= class_list.sub_num %></td>
+    29: 		<td><%= class_list.c_name %></td>
+    30: 		<td><%= class_list.department_id.dep_name%></td>
+    31: 		<td><%= class_list.target_grade %></td>
+    32: 		<td><%= class_list.credit %></td>
+    33:         <td><%= class_list.professor %></td>
+  
+app/views/class_lists/index.html.erb:30:in `block in _app_views_class_lists_index_html_erb__460798405628965883_70122692838600'
+app/views/class_lists/index.html.erb:24:in `_app_views_class_lists_index_html_erb__460798405628965883_70122692838600'
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:32:57 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (18.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (142.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 227ms (Views: 178.2ms | ActiveRecord: 43.1ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:33:30 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (51.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.5ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.3ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (7.1ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 69ms (Views: 13.5ms | ActiveRecord: 52.7ms)
+
+
+Started POST "/class_statuses?class_status%5Bclass_list_id%5D=1&class_status%5Bstudent_id%5D=1" for 172.17.0.1 at 2022-11-20 05:35:57 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#create as HTML
+  Parameters: {"authenticity_token"=>"FeO+3eOwRkO/tR3mIn0IhweeO4AskV67kQnOpw7r9pHGUuGMRCv59ZVoNQscC+uS+JDzo+xBQw5g4gm12EJhqQ==", "class_status"=>{"class_list_id"=>"1", "student_id"=>"1"}}
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/class_statuses_controller.rb:27
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_statuses_controller.rb:27
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" WHERE "class_lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_statuses_controller.rb:27
+  [1m[36mClassStatus Create (1.7ms)[0m  [1m[32mINSERT INTO "class_statuses" ("student_id", "class_list_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["student_id", 1], ["class_list_id", 1], ["created_at", "2022-11-20 05:35:57.500815"], ["updated_at", "2022-11-20 05:35:57.500815"]]
+  ↳ app/controllers/class_statuses_controller.rb:27
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/class_statuses_controller.rb:27
+Redirected to http://teamproject-wghck.run.goorm.io/class_statuses/1
+Completed 302 Found in 75ms (ActiveRecord: 54.3ms)
+
+
+Started GET "/class_statuses/1" for 172.17.0.1 at 2022-11-20 05:35:57 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudent Load (23.1ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassStatus Load (0.4ms)[0m  [1m[34mSELECT  "class_statuses".* FROM "class_statuses" WHERE "class_statuses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_statuses_controller.rb:63
+  Rendering class_statuses/show.html.erb within layouts/application
+  [1m[36mStudent Load (0.7ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/show.html.erb:15
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" WHERE "class_lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/show.html.erb:20
+  Rendered class_statuses/show.html.erb within layouts/application (3.9ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 39ms (Views: 10.7ms | ActiveRecord: 24.5ms)
+
+
+Started GET "/class_statuses" for 172.17.0.1 at 2022-11-20 05:35:59 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_statuses/index.html.erb within layouts/application
+  [1m[36mClassStatus Load (0.6ms)[0m  [1m[34mSELECT "class_statuses".* FROM "class_statuses"[0m
+  ↳ app/views/class_statuses/index.html.erb:17
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/index.html.erb:21
+  [1m[36mClassList Load (0.4ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" WHERE "class_lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/index.html.erb:22
+  Rendered class_statuses/index.html.erb within layouts/application (6.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 44.5ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:36:19 +0000
+Cannot render console from 10.1.20.202! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (88.0ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.3ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (125.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 138ms (Views: 45.2ms | ActiveRecord: 89.8ms)
+
+
+Started GET "/class_statuses" for 172.17.0.1 at 2022-11-20 05:38:13 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#index as HTML
+  [1m[36mStudent Load (0.3ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_statuses/index.html.erb within layouts/application
+  [1m[36mClassStatus Load (0.4ms)[0m  [1m[34mSELECT "class_statuses".* FROM "class_statuses"[0m
+  ↳ app/views/class_statuses/index.html.erb:17
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/index.html.erb:21
+  [1m[36mClassList Load (0.3ms)[0m  [1m[34mSELECT  "class_lists".* FROM "class_lists" WHERE "class_lists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_statuses/index.html.erb:22
+  Rendered class_statuses/index.html.erb within layouts/application (4.5ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 63ms (Views: 59.7ms | ActiveRecord: 1.4ms)
+
+
+Started DELETE "/class_statuses/1" for 172.17.0.1 at 2022-11-20 05:38:15 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"GNkvv5L4JUcP9wlXkCRzyHW7NajfQOgnKSIWWq//lS3LaHDuNWOa8SUqIbquUpDdirX9ix+Q9ZLYydFIeVYCFQ==", "id"=>"1"}
+  [1m[36mStudent Load (93.8ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mClassStatus Load (0.4ms)[0m  [1m[34mSELECT  "class_statuses".* FROM "class_statuses" WHERE "class_statuses"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/class_statuses_controller.rb:63
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/class_statuses_controller.rb:52
+  [1m[36mClassStatus Destroy (0.4ms)[0m  [1m[31mDELETE FROM "class_statuses" WHERE "class_statuses"."id" = $1[0m  [["id", 1]]
+  ↳ app/controllers/class_statuses_controller.rb:52
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/class_statuses_controller.rb:52
+Redirected to http://teamproject-wghck.run.goorm.io/class_statuses
+Completed 302 Found in 102ms (ActiveRecord: 97.4ms)
+
+
+Started GET "/class_statuses" for 172.17.0.1 at 2022-11-20 05:38:15 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassStatusesController#index as HTML
+  [1m[36mStudent Load (0.4ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_statuses/index.html.erb within layouts/application
+  [1m[36mClassStatus Load (0.4ms)[0m  [1m[34mSELECT "class_statuses".* FROM "class_statuses"[0m
+  ↳ app/views/class_statuses/index.html.erb:17
+  Rendered class_statuses/index.html.erb within layouts/application (1.7ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:38:21 +0000
+Cannot render console from 10.1.20.239! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.9ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (10.8ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 19.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/class_lists" for 172.17.0.1 at 2022-11-20 05:46:43 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.9ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.5ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (202.2ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 313ms (Views: 197.0ms | ActiveRecord: 20.4ms)
+
+
+Started DELETE "/students/sign_out" for 172.17.0.1 at 2022-11-20 05:46:46 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KwX0eZccIzgY5PyQqmMeR8HtU88Ss3ZfYTOf69QVI3f4tKsoMIecjjI51H2UFf1SPuOb7NJja+qQ2Fj5Ary0Tw=="}
+  [1m[36mStudent Load (0.6ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://teamproject-wghck.run.goorm.io/
+Completed 302 Found in 57ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 172.17.0.1 at 2022-11-20 05:46:46 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_in" for 172.17.0.1 at 2022-11-20 05:46:46 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 05:46:48 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.8ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (12.6ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for #<Student:0x00005570209000c0>
+Did you mean?  s_name):
+     5: 
+     6:   <div class="field">
+     7: 	  <%= f.label :name %><br />
+     8: 	  <%= f.text_field :name, autofocus: true%>
+     9: </div>
+    10: <div class="field">
+    11: 	  <%= f.label :grade %><br />
+  
+app/views/devise/registrations/new.html.erb:8:in `block in _app_views_devise_registrations_new_html_erb__4307438973485226483_46970035763280'
+app/views/devise/registrations/new.html.erb:3:in `_app_views_devise_registrations_new_html_erb__4307438973485226483_46970035763280'
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 05:47:41 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.5ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  ↳ app/views/devise/registrations/new.html.erb:17
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:40
+  Rendered devise/shared/_links.html.erb (1.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (206.4ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 370ms (Views: 279.3ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/students/sign_up" for 172.17.0.1 at 2022-11-20 05:48:10 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (0.7ms)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "students"[0m
+  ↳ app/views/devise/registrations/new.html.erb:16
+  [1m[36mDepartment Load (0.4ms)[0m  [1m[34mSELECT "departments".* FROM "departments"[0m
+  ↳ app/views/devise/registrations/new.html.erb:39
+  Rendered devise/shared/_links.html.erb (1.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (11.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/students" for 172.17.0.1 at 2022-11-20 05:48:31 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hvdFtX5l22Rf8vXrc7i1xUGUwqMeJoAeqF+Eq1xB93w49AP08hoWupKED3miABwQjFvQO2AcMMOKg9VWFBnnJg==", "student"=>{"s_name"=>"이윤승", "grade"=>"3", "s_num"=>"1", "email"=>"aaa@naver.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]", "department_id"=>"1"}, "commit"=>"Sign up"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mDepartment Load (0.5ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "students" WHERE "students"."email" = $1 LIMIT $2[0m  [["email", "aaa@naver.com"], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[36mStudent Create (0.9ms)[0m  [1m[32mINSERT INTO "students" ("email", "encrypted_password", "department_id", "created_at", "updated_at", "s_name", "s_num", "grade") VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING "id"[0m  [["email", "aaa@naver.com"], ["encrypted_password", "$2a$12$QVoZsYDIwxpBLi7Kv81HoeGmQegxKAFedDdWi37a7LJ/Ke/WUO6gO"], ["department_id", 1], ["created_at", "2022-11-20 05:48:33.189067"], ["updated_at", "2022-11-20 05:48:33.189067"], ["s_name", "이윤승"], ["s_num", 1], ["grade", 3]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  [1m[35m (30.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+Redirected to http://teamproject-wghck.run.goorm.io/
+Completed 302 Found in 1246ms (ActiveRecord: 33.2ms)
+
+
+Started GET "/" for 172.17.0.1 at 2022-11-20 05:48:33 +0000
+Cannot render console from 10.1.21.240! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ClassListsController#index as HTML
+  [1m[36mStudent Load (0.5ms)[0m  [1m[34mSELECT  "students".* FROM "students" WHERE "students"."id" = $1 ORDER BY "students"."id" ASC LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ /usr/local/lib/ruby/gems/2.6.0/gems/activerecord-5.2.8.1/lib/active_record/log_subscriber.rb:98
+  Rendering class_lists/index.html.erb within layouts/application
+  [1m[36mClassList Load (0.7ms)[0m  [1m[34mSELECT "class_lists".* FROM "class_lists"[0m
+  ↳ app/views/class_lists/index.html.erb:24
+  [1m[36mDepartment Load (0.6ms)[0m  [1m[34mSELECT  "departments".* FROM "departments" WHERE "departments"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:30
+  [1m[36mProfessor Load (0.4ms)[0m  [1m[34mSELECT  "professors".* FROM "professors" WHERE "professors"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/class_lists/index.html.erb:33
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "class_statuses" WHERE "class_statuses"."class_list_id" = $1[0m  [["class_list_id", 1]]
+  ↳ app/views/class_lists/index.html.erb:35
+  Rendered class_lists/index.html.erb within layouts/application (364.3ms)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 390ms (Views: 363.6ms | ActiveRecord: 11.6ms)
+
+

@@ -4,6 +4,7 @@ class ClassListsController < ApplicationController
   # GET /class_lists or /class_lists.json
   def index
     @class_lists = ClassList.all
+	  
   end
 
   # GET /class_lists/1 or /class_lists/1.json

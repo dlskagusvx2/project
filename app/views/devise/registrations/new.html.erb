@@ -4,8 +4,21 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
+	  <%= f.label :name %><br />
+	  <%= f.text_field :s_name, autofocus: true%>
+</div>
+<div class="field">
+	  <%= f.label :grade %><br />
+	  <%= f.text_field :grade%>
+</div>
+
+<div class="field">
+	  <%= f.hidden_field :s_num, value: Student.all.size%>
+</div>
+
+  <div class="field">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    <%= f.email_field :email, autocomplete: "email" %>
   </div>
 
   <div class="field">
@@ -22,12 +35,8 @@
   </div>
 
 <div class="field">
-	<%= f.label :department_id %><br />
-	<select>
-		<%= Department.each do |dep| %>
-		  <option><%= dep.dep_name%></option>
-		<% end %>
-	</select>
+	<%= f.label "학과" %><br />
+	<%= f.collection_select :department_id, Department.all, :id, :dep_name %>
 </div>
 
   <div class="actions">

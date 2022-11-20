@@ -22,17 +22,17 @@
 
   <tbody>
     <% @class_lists.each do |class_list| %>
-      <tr>
+	  <tr>
 		<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id })%></td>
 		<td><%= class_list.classify %></td>
 		<td><%= class_list.sub_num %></td>
 		<td><%= class_list.c_name %></td>
-		<td><%= class_list.department %></td>
+		<td><%= class_list.department.dep_name%></td>
 		<td><%= class_list.target_grade %></td>
 		<td><%= class_list.credit %></td>
-        <td><%= class_list.professor %></td>
+        <td><%= class_list.professor.pro_name %></td>
         <td><%= class_list.lecture_time %></td>
-        <td><%= Class_Status.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td>
+        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td>
 		
 		  
       </tr>

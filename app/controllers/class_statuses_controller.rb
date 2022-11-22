@@ -5,20 +5,6 @@ class ClassStatusesController < ApplicationController
   def index
     @class_statuses = ClassStatus.all
 	  
-	  @class_statuses.each do |class_status|
-		  @waiting_class_list = ClassStatus.where(class_list_id: class_status.class_list_id, status: "대기")
-		  if class_status.trnasfer?
-			  @waiting_class_list.each do |class_list| 
-					if class_status.full?
-						break
-					end
-
-					@waiting = class_list
-					@waiting.status = "신청"
-					@waiting.save
-				end
-		  end
-	  end
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json
@@ -72,6 +58,20 @@ class ClassStatusesController < ApplicationController
       format.html { redirect_to root_path, notice: "강의신청이 취소되었습니다." }
       format.json { head :no_content }
     end
+	  ClassStatus.all.each do |class_status|
+		  @waiting_class_list = ClassStatus.where(class_list_id: class_status.class_list_id, status: "대기")
+		  if class_status.empty?
+			  @waiting_class_list.each do |class_list| 
+					if class_list.full?
+						break
+					end
+
+					@waiting = class_list
+					@waiting.status = "신청"
+					@waiting.save
+				end
+		  end
+	  end
   end
 
   private

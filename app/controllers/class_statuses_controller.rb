@@ -4,7 +4,7 @@ class ClassStatusesController < ApplicationController
   # GET /class_statuses or /class_statuses.json
   def index
     @class_statuses = ClassStatus.all
-	  
+	@my_reserve_class = @class_class_statuses.where(student_id: current_student.id, status: "예약")
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json

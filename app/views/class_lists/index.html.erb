@@ -121,7 +121,12 @@
 <h1>수강신청 예약내역</h1>
 <table>
   <thead>
-	  <td><%= button_to "일괄 신청", @my_reserve_class_lists.transfer %> </td>
+	  <tr><%= button_to "일괄 신청"%>
+		<%ClassStatus.where(student_id: current_student.id, status: "예약").each do |class_list| %>
+			<% class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, status: "예약"})%>
+		<% end %>
+	</tr>
+	  
     <tr>
 	  <th>삭제</th>
       <th>이수 구분</th>

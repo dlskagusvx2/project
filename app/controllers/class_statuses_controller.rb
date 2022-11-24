@@ -4,7 +4,6 @@ class ClassStatusesController < ApplicationController
   # GET /class_statuses or /class_statuses.json
   def index
     @class_statuses = ClassStatus.all
-	@my_reserve_class = @class_class_statuses.where(student_id: current_student.id, status: "예약")
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json
@@ -24,17 +23,17 @@ class ClassStatusesController < ApplicationController
   def create
     @class_status = ClassStatus.new(class_status_params)
 
-    respond_to do |format|
-		if @class_status.overlap?
-			format.html {redirect_to root_path, notice: "중복신청은 되지 않습니다."}
-		elsif @class_status.full?
-			@class_status.status = "대기"
-			@class_status.save
-			format.html { redirect_to root_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
-		else @class_status.save
-        format.html { redirect_to root_path, notice: "강의 신청이 완료되었습니다." }
-      end
-    end
+		respond_to do |format|
+			if @class_status.overlap?
+				format.html {redirect_to root_path, notice: "중복신청은 되지 않습니다."}
+			elsif @class_status.full?
+				@class_status.status = "대기"
+				@class_status.save
+				format.html { redirect_to root_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
+			else @class_status.save
+				format.html { redirect_to root_path, notice: "강의 신청이 완료되었습니다." }
+			end
+		end
   end
 
   # PATCH/PUT /class_statuses/1 or /class_statuses/1.json

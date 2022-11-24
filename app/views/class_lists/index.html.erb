@@ -121,11 +121,7 @@
 <h1>수강신청 예약내역</h1>
 <table>
   <thead>
-	  <tr><%= button_to "일괄 신청"%>
-		<%ClassStatus.where(student_id: current_student.id, status: "예약").each do |class_list| %>
-			<% class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, status: "예약"})%>
-		<% end %>
-	</tr>
+	  <td><%= button_to "일괄 신청", class_statuses_path(class_status: { student_id: current_student.id, status: "예약"}, :status => "신청")%>
 	  
     <tr>
 	  <th>삭제</th>
@@ -137,7 +133,7 @@
       <th>학점</th>
       <th>담당 교수</th>
       <th>강의시간</th>
-      <th>제한 인원</th>
+      <th>제한 인원</th>	
 
       <th colspan="3"></th>
     </tr>

@@ -1,0 +1,26 @@
+a {
+	text: white;
+}
+.btn_list {
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    list-style: none;
+    border-radius: 3px !important;
+    font-family: 'Nanum Gothic Bold';
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    vertical-align: middle;
+    height: 34px;
+    line-height: 34px;
+    border: 1px solid #0b4296;
+    color: #fff !important;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    font-size: 17px;
+    background-color: #454d59;
+    border-color: #3a4049;
+    padding: 6px 0;
+}

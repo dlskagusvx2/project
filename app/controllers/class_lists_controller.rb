@@ -7,6 +7,7 @@ class ClassListsController < ApplicationController
 	@my_class_lists = ClassStatus.where(student_id: current_student.id, status: "신청")
 	@my_waiting_class_lists = ClassStatus.where(student_id: current_student.id, status: "대기")
 	@my_reserve_class_lists = ClassStatus.where(student_id: current_student.id, status: "예약")
+	  @class_statusess = ClassStatus.all
   end
 
   # GET /class_lists/1 or /class_lists/1.json

@@ -12,6 +12,6 @@ class ClassStatus < ApplicationRecord
 	
 	def empty?
 		ClassStatus.where(class_list_id: self.class_list_id, status: "신청").size < ClassList.find(self.class_list_id).limit_num
-	end	
+	end
 
 end

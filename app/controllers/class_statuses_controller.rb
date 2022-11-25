@@ -2,11 +2,14 @@ class ClassStatusesController < ApplicationController
   before_action :set_class_status, only: %i[ show edit update destroy ]
 
 	def reserve_to_apply
+		@my_reserve_class = ClassStatus.where(student_id: current_student.id, status: "예약")
 		@my_reserve_class.each do |class_list|
 			if class_list.empty?
 				class_list.status = "신청"
+				class_list.save
 			end
 		end
+		redirect_to class_lists_path
 	end
   # GET /class_statuses or /class_statuses.json
   def index
@@ -33,13 +36,13 @@ class ClassStatusesController < ApplicationController
 
 		respond_to do |format|
 			if @class_status.overlap?
-				format.html {redirect_to root_path, notice: "중복신청은 되지 않습니다."}
+				format.html {redirect_to class_lists_path, notice: "중복신청은 되지 않습니다."}
 			elsif @class_status.full?
 				@class_status.status = "대기"
 				@class_status.save
-				format.html { redirect_to root_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
+				format.html { redirect_to class_lists_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
 			else @class_status.save
-				format.html { redirect_to root_path, notice: "강의 신청이 완료되었습니다." }
+				format.html { redirect_to class_lists_path, notice: "강의 신청이 완료되었습니다." }
 			end
 		end
   end
@@ -62,7 +65,7 @@ class ClassStatusesController < ApplicationController
     @class_status.destroy
 
     respond_to do |format|
-      format.html { redirect_to root_path, notice: "강의신청이 취소되었습니다." }
+      format.html { redirect_to class_lists_path, notice: "강의신청이 취소되었습니다." }
       format.json { head :no_content }
     end
 	  ClassStatus.all.each do |class_status|

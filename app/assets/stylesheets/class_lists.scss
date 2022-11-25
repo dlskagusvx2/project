@@ -9,7 +9,7 @@
 .navbar {
 	font-family: 'Nanum Gothic', "맑은 고딕", Dotum, "돋움", Helvetica, sans-serif;
     font-size: 13px;
-    color: #666;
+    color: #FFFFFF;
     line-height: 18px;
     -webkit-text-size-adjust: none;
     word-break: break-all;
@@ -32,8 +32,4 @@
 .navbar__menu li{
 	padding: 8px 12px;
 }
-.btn_list {
-	display: flex;
-	position: relative;
 
-}

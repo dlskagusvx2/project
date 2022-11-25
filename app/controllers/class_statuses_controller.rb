@@ -1,9 +1,17 @@
 class ClassStatusesController < ApplicationController
   before_action :set_class_status, only: %i[ show edit update destroy ]
 
+	def reserve_to_apply
+		@my_reserve_class.each do |class_list|
+			if class_list.empty?
+				class_list.status = "신청"
+			end
+		end
+	end
   # GET /class_statuses or /class_statuses.json
   def index
     @class_statuses = ClassStatus.all
+	@my_reserve_class = ClassStatus.where(student_id: current_student.id, status: "예약")
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json

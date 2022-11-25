@@ -1,5 +1,33 @@
 <p id="notice"><%= notice %></p>
 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="class_lists.scss">
+	<title>Nav bar</title>
+	<script src="class_status"></script>
+</head>
+<body>
+	<nav class="navtitle">
+		<div class="navbar__logo">
+			<img src="	http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+		</div>
+	</nav>
+	<nav class="navbar">
+		<ul class="navbar__menu">
+			<li><a href="">공지사항</a></li>
+			<li><a href="">수강신청</a></li>
+			<li><a href="">학점이수현황</a></li>
+			<li><a href="">재수강신청</a></li>
+		</ul>
+		
+		
+	</nav>
+</body>
+</html>
+
 <h1>Class Lists</h1>
 
 <table>
@@ -121,7 +149,7 @@
 <h1>수강신청 예약내역</h1>
 <table>
   <thead>
-	  <td><%= button_to "일괄 신청", class_statuses_path(class_status: { student_id: current_student.id, status: "예약"}, :status => "신청")%>
+	  <td><%= button_to "일괄 신청", class_statuses_reserve_to_apply_path(), method: :get%>
 	  
     <tr>
 	  <th>삭제</th>

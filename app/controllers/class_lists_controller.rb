@@ -1,9 +1,5 @@
 class ClassListsController < ApplicationController
   before_action :set_class_list, only: %i[ show edit update destroy ]
-	
-	def reserve_to_apply
-		
-	end
 
   # GET /class_lists or /class_lists.json
   def index
@@ -16,6 +12,10 @@ class ClassListsController < ApplicationController
   # GET /class_lists/1 or /class_lists/1.json
   def show
   end
+  
+  def mainpage
+  end
+	  
 
   # GET /class_lists/new
   def new

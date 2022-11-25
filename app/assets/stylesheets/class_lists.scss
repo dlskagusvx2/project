@@ -1,3 +1,39 @@
 // Place all the styles related to the class_lists controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.navtitle {
+	justify-content:space-between;
+		align-items: center;
+}
+
+.navbar {
+	font-family: 'Nanum Gothic', "맑은 고딕", Dotum, "돋움", Helvetica, sans-serif;
+    font-size: 13px;
+    color: #666;
+    line-height: 18px;
+    -webkit-text-size-adjust: none;
+    word-break: break-all;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background: #1764dc;
+    height: 38px;
+    z-index: 22221;
+	
+}
+.navbar__menu {
+	display: flex;
+	list-style: none;
+	padding-left: 0;
+	color: #FFF;
+	
+}
+
+.navbar__menu li{
+	padding: 8px 12px;
+}
+.btn_list {
+	display: flex;
+	position: relative;
+
+}

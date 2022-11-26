@@ -8,29 +8,26 @@
 	<link rel="stylesheet" href="class_lists.scss">
 	<title>Nav bar</title>
 	<script src="class_status"></script>
+	<style>
+		table {
+			width:100%
+			border: 1px solid #767676;
+			border-collapse:collapse;
+		}
+		th,tr{
+			padding: 10px;
+			border: 1px solid #767676;
+		}
+	</style>
+
 </head>
 <body>
-	<nav class="navtitle">
-		<div class="navbar__logo">
-			<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
-		</div>
-	</nav>
-	<nav class="navbar">
-		<ul class="navbar__menu">
-			<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>
-			<li><a href="">수강신청</a></li>
-			<li><a href="">학점이수현황</a></li>
-			<li><a href="">재수강신청</a></li>
-		</ul>
-		
-		
-	</nav>
+	
 </body>
 </html>
 
 <h1>개설강좌</h1>
-
-<table>
+<table border="1"bordercolor="gray" width= "70%" height= "100">
   <thead>
     <tr>
 	  <th>예약</th>
@@ -73,7 +70,7 @@
 <br>
 
 <h1>수강 확정내역</h1>
-<table border="1"bordercolor="gray">
+<table border="1"bordercolor="gray" width= "70%" height= "100">
   <thead>
     <tr>
 	  <th>삭제</th>
@@ -110,7 +107,7 @@
 </table>
 
 <h1>수강 대기내역</h1>
-<table border="1"bordercolor="gray">
+<table border="1"bordercolor="gray" width= "70%" height= "100">
   <thead>
     <tr>
 	  <th>삭제</th>
@@ -147,7 +144,7 @@
 </table>
 
 <h1>수강신청 예약내역</h1>
-<table border="1"bordercolor="gray">
+<table border="1"bordercolor="gray" width= "70%" height= "100">
   <thead>
 	  <td><%= button_to "일괄 신청", class_statuses_reserve_to_apply_path(id: 78), method: :get%>
 	  
@@ -184,6 +181,70 @@
     <% end %>
   </tbody>
 </table>
+
+<h1>
+	시간표 현황
+</h1>
+<table border="1"bordercolor="gray">
+	<thead>
+		<tr>
+			<td><%= %></td>
+			<td><%= "월"%></td>
+			<td><%= "화"%></td>
+			<td><%= "수"%></td>
+			<td><%= "목"%></td>
+			<td><%= "금"%></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% i = 1 %>
+		<% while i < 9 %>
+			<% m = "m#{i}"; t = "t#{i}"; w = "w#{i}"; th = "th#{i}"; f = "f#{i}"%>
+			<tr>
+				<td><%= i %></td>
+				<td>
+					<% @my_class_lists.each do |apply_class| %>
+						<% if apply_class.class_list.lecture_time.include? m %>
+							<%= apply_class.class_list.sub_num%>
+						<% end %>
+					<% end %>
+				</td>
+				<td>
+					<% @my_class_lists.each do |apply_class| %>
+						<% if apply_class.class_list.lecture_time.include? t %>
+							<%= apply_class.class_list.sub_num%>
+						<% end %>
+					<% end %>
+				</td>
+				<td>
+					<% @my_class_lists.each do |apply_class| %>
+						<% if apply_class.class_list.lecture_time.include? w %>
+							<%= apply_class.class_list.sub_num%>
+						<% end %>
+					<% end %>
+				</td>
+				<td>
+					<% @my_class_lists.each do |apply_class| %>
+						<% if apply_class.class_list.lecture_time.include? th %>
+							<%= apply_class.class_list.sub_num%>
+						<% end %>
+					<% end %>
+				</td>
+				<td>
+					<% @my_class_lists.each do |apply_class| %>
+						<% if apply_class.class_list.lecture_time.include? f %>
+							<%= apply_class.class_list.sub_num%>
+						<% end %>
+					<% end %>
+				</td>
+			</tr>
+			<% i += 1 %>
+		<% end %>
+	</tbody>
+	
+	
+</table>
+
 
 
 <br>

@@ -15,7 +15,13 @@ class ClassStatus < ApplicationRecord
 	end
 	
 	def retake?
-		ClassStatus.where(student_id: self.student_id, class_list_id: self.class_list_id, status: "신청")
+		@retake = ClassStatus.where(student_id: self.student_id, class_list_id: self.class_list_id)
+		@retake.each do |retake|
+			if retake.status == "신청"
+				return true
+			end
+		end
+		return false
 	end
 
 end

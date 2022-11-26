@@ -10,6 +10,19 @@
   </head>
 
   <body>
+	  	<nav class="navtitle">
+		<div class="navbar__logo">
+			<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+		</div>
+	</nav>
+	<nav class="navbar">
+		<ul class="navbar__menu">
+			<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>
+			<li><a href="http://teamproject-wghck.run.goorm.io/class_lists">수강신청</a></li>
+			<li><a href="">학점이수현황</a></li>
+			<li><a href="https://teamproject-wghck.run.goorm.io/class_statuses/78/retake">재수강신청</a></li>
+		</ul>
+	</nav>
 	  <div>
 		  <% if student_signed_in? %>
 		  	<%= link_to "학생정보", edit_student_registration_path %>

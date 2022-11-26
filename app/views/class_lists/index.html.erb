@@ -12,12 +12,12 @@
 <body>
 	<nav class="navtitle">
 		<div class="navbar__logo">
-			<img src="	http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+			<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
 		</div>
 	</nav>
 	<nav class="navbar">
 		<ul class="navbar__menu">
-			<li><a href="">공지사항</a></li>
+			<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>
 			<li><a href="">수강신청</a></li>
 			<li><a href="">학점이수현황</a></li>
 			<li><a href="">재수강신청</a></li>
@@ -28,7 +28,7 @@
 </body>
 </html>
 
-<h1>Class Lists</h1>
+<h1>개설강좌</h1>
 
 <table>
   <thead>
@@ -53,7 +53,7 @@
     <% @class_lists.each do |class_list| %>
 	  <tr>
 		<td><%= button_to "예약", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, :status => "예약"})%></td>
-		<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id })%></td>
+		<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id})%></td>
 		<td><%= class_list.classify %></td>
 		<td><%= class_list.sub_num %></td>
 		<td><%= class_list.c_name %></td>
@@ -62,7 +62,7 @@
 		<td><%= class_list.credit %></td>
         <td><%= class_list.professor.pro_name %></td>
         <td><%= class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.id).size %> / <%= class_list.limit_num %></td> 
+        <td><%= ClassStatus.where(class_list_id: class_list.id, status: "신청").size %> / <%= class_list.limit_num %></td> 
       </tr>
     <% end %>
   </tbody>
@@ -73,7 +73,7 @@
 <br>
 
 <h1>수강 확정내역</h1>
-<table>
+<table border="1"bordercolor="gray">
   <thead>
     <tr>
 	  <th>삭제</th>
@@ -110,7 +110,7 @@
 </table>
 
 <h1>수강 대기내역</h1>
-<table>
+<table border="1"bordercolor="gray">
   <thead>
     <tr>
 	  <th>삭제</th>
@@ -147,7 +147,7 @@
 </table>
 
 <h1>수강신청 예약내역</h1>
-<table>
+<table border="1"bordercolor="gray">
   <thead>
 	  <td><%= button_to "일괄 신청", class_statuses_reserve_to_apply_path(id: 78), method: :get%>
 	  

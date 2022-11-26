@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<!DOCTYPE html>
+<html lang="ko">
+	
+</html>
+
+<h1>
+	재수강 신청
+</h1>
+<table>
+	<thead>
+		<tr>
+			<td></td>
+			<td>교과목 번호</td>
+			<td>교과목 명</td>
+			<td>이수 구분</td>
+			<td>학점</td>
+			<td>점수</td>
+			<td>신청 여부</td>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% @my_completion_class.each do |class_list| %>
+			<% if class_list.score <  80 %>
+				<tr>
+					<% if not class_list.retake?%>
+						<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.class_list_id, :status => "신청"})%></td>
+					<% else %>
+						<td></td>
+					<% end %>
+					<td><%= class_list.class_list.sub_num %></td>
+					<td><%= class_list.class_list.c_name%></td>
+					<td><%= class_list.class_list.classify%></td>
+					<td><%= class_list.class_list.credit%></td>
+					<td><%= class_list.score%></td>
+					<% if class_list.retake?%>
+						<td>신청 완료</td>
+					<% end %>
+				</tr>
+			<% end %>
+		<% end %>
+	</tbody>
+</table>

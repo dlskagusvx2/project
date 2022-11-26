@@ -11,6 +11,10 @@ class ClassStatusesController < ApplicationController
 		end
 		redirect_to class_lists_path
 	end
+	
+	def retake
+		@my_completion_class = ClassStatus.where(student_id: current_student.id, status: "수료")
+	end
   # GET /class_statuses or /class_statuses.json
   def index
     @class_statuses = ClassStatus.all
@@ -41,7 +45,8 @@ class ClassStatusesController < ApplicationController
 				@class_status.status = "대기"
 				@class_status.save
 				format.html { redirect_to class_lists_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
-			else @class_status.save
+			else 
+				@class_status.save
 				format.html { redirect_to class_lists_path, notice: "강의 신청이 완료되었습니다." }
 			end
 		end

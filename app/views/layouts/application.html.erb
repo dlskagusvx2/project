@@ -11,27 +11,30 @@
 
   <body>
 	  	<nav class="navtitle">
-		<div class="navbar__logo">
-			<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
-		</div>
-	</nav>
+			<div class="navbar__logo">
+				<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+				<%= "#{current_student.s_name} | #{current_student.department.dep_name} | #{current_student.grade}학년" %>
+			</div>
+				
+		</nav>
 	<nav class="navbar">
 		<ul class="navbar__menu">
 			<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>
 			<li><a href="http://teamproject-wghck.run.goorm.io/class_lists">수강신청</a></li>
 			<li><a href="">학점이수현황</a></li>
 			<li><a href="https://teamproject-wghck.run.goorm.io/class_statuses/78/retake">재수강신청</a></li>
+			<li>
+			  <% if student_signed_in? %>
+				<%= link_to "로그아웃", destroy_student_session_path, method: :delete %>
+			  <% else %>
+				<%= link_to "로그인", student_session_path %>
+				<%= link_to "회원가입", "/students/sign_up" %>
+			  <% end %>
+			</li>
 		</ul>
 	</nav>
 	  <div>
-		  <% if student_signed_in? %>
-		  	<%= link_to "학생정보", edit_student_registration_path %>
-		  	<%= link_to "로그아웃", destroy_student_session_path, method: :delete %>
-		  	아이디 : <%= current_student.email %>
-		  <% else %>
-		  	<%= link_to "로그인", student_session_path %>
-		  	<%= link_to "회원가입", "/students/sign_up" %>
-		  <% end %>
+		  
 	  </div>
 	  <hr/>
 	  

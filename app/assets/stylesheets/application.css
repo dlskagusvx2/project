@@ -14,5 +14,19 @@
  *= require_self
  */
 
-
-
+.navtitle{
+	display: inline-block;
+    width: 100%;
+}
+.navtitle >div {float: right}
+.navtitle>ul {
+	list-style: none;
+	float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.navtitle>ul>li {
+	display: inline-block;
+    padding: 0;
+  }

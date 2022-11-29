@@ -9,10 +9,15 @@
 	<title>Nav bar</title>
 	<script src="class_status"></script>
 	<style>
+		body{
+			width: 100%; height: 100%;
+		}
 		table {
-			width:100%
 			border: 1px solid #767676;
 			border-collapse:collapse;
+			text-align: center;
+
+			
 		}
 		th,tr{
 			padding: 10px;
@@ -23,230 +28,275 @@
 </head>
 <body>
 	
+
+
+<div class ="combine">
+	<h1>개설강좌</h1>
+	<div>
+		과목 유형&nbsp;
+		<input type="radio" name="checked_classify" value="전체" checked="checked">전체&nbsp;&nbsp;
+		<input type="radio" name="checked_classify" value="공통교양">공통 교양
+		<input type="radio" name="checked_classify" value="자유교양">자유 교양
+		<input type="radio" name="checked_classify" value="균형교양">균형 교양
+		<input type="radio" name="checked_classify" value="전공선택">전공 선택
+		<input type="radio" name="checked_classify" value="전공필수">전공 필수
+	</div>
+	<br>
+	<div class="box1">
+
+		<table border="1"bordercolor="gray">
+		  <thead>
+
+			<tr>
+			  <th>예약</th>
+			  <th>신청</th>
+			  <th>이수 구분</th>
+			  <th>과목 번호</th>
+			  <th>과목 명</th>
+			  <th>개설 학과</th>
+			  <th>대상 학년</th>
+			  <th>학점</th>
+			  <th>담당 교수</th>
+			  <th>강의시간</th>
+			  <th>제한 인원</th>
+
+			  <th colspan="3"></th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+			<% @class_lists.each do |class_list| %>
+
+			  <tr>
+				<td><%= button_to "예약", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, :status => "예약"})%></td>
+				<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id})%></td>
+				<td><%= class_list.classify %></td>
+				<td><%= class_list.sub_num %></td>
+				<td><%= class_list.c_name %></td>
+				<td><%= class_list.department.dep_name%></td>
+				<td><%= class_list.target_grade %></td>
+				<td><%= class_list.credit %></td>
+				<td><%= class_list.professor.pro_name %></td>
+				<%class_lecture = class_list.lecture_time%>
+				<% class_day_ko = class_list.day_to_dayko %>
+
+				<td><% class_day_ko.each do |day|%>
+					<%= day %>
+				<% end %></td>
+				<td><%= ClassStatus.where(class_list_id: class_list.id, status: "신청").size %> / <%= class_list.limit_num %></td> 
+			  </tr>
+			<% end %>
+		  </tbody>
+		</table>
+	</div>
+
+	<br>
+	<%= link_to 'New Class List', new_class_list_path %>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div class="box3">
+		<h1>수강 확정내역</h1>
+		<table border="1"bordercolor="gray">
+		  <thead>
+			<tr>
+			  <th>삭제</th>
+			  <th>이수 구분</th>
+			  <th>과목 번호</th>
+			  <th>과목 명</th>
+			  <th>개설 학과</th>
+			  <th>대상 학년</th>
+			  <th>학점</th>
+			  <th>담당 교수</th>
+			  <th>강의시간</th>
+			  <th>제한 인원</th>
+
+			  <th colspan="3"></th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+			<% @my_class_lists.each do |class_list| %>
+			  <tr>
+				<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
+				<td><%= class_list.class_list.classify %></td>
+				<td><%= class_list.class_list.sub_num %></td>
+				<td><%= class_list.class_list.c_name %></td>
+				<td><%= class_list.class_list.department.dep_name%></td>
+				<td><%= class_list.class_list.target_grade %></td>
+				<td><%= class_list.class_list.credit %></td>
+				<td><%= class_list.class_list.professor.pro_name %></td>
+				<%class_lecture = class_list.class_list.lecture_time%>
+				<% class_day_ko = class_list.class_list.day_to_dayko %>
+
+				<td><% class_day_ko.each do |day|%>
+					<%= day %>
+				<% end %></td>
+				<td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
+			  </tr>
+			<% end %>
+		  </tbody>
+		</table>
+	</div>
+	
+	<div class="box3">
+		<h1>수강 대기내역</h1>
+		<table border="1"bordercolor="gray">
+		  <thead>
+			<tr>
+			  <th>삭제</th>
+			  <th>이수 구분</th>
+			  <th>과목 번호</th>
+			  <th>과목 명</th>
+			  <th>개설 학과</th>
+			  <th>대상 학년</th>
+			  <th>학점</th>
+			  <th>담당 교수</th>
+			  <th>강의시간</th>
+			  <th>제한 인원</th>
+
+			  <th colspan="3"></th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+			<% @my_waiting_class_lists.each do |class_list| %>
+			  <tr>
+				<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
+				<td><%= class_list.class_list.classify %></td>
+				<td><%= class_list.class_list.sub_num %></td>
+				<td><%= class_list.class_list.c_name %></td>
+				<td><%= class_list.class_list.department.dep_name%></td>
+				<td><%= class_list.class_list.target_grade %></td>
+				<td><%= class_list.class_list.credit %></td>
+				<td><%= class_list.class_list.professor.pro_name %></td>
+				<%class_lecture = class_list.class_list.lecture_time%>
+				<% class_day_ko = class_list.class_list.day_to_dayko %>
+
+				<td><% class_day_ko.each do |day|%>
+						<%= day %>
+					<% end %></td>
+				<td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
+			  </tr>
+			<% end %>
+		  </tbody>
+		</table>
+	</div>
+	<div class="box3">
+		<h1>수강신청 예약내역</h1>
+		<table border="1"bordercolor="gray">
+		  <thead>
+			  <td><%= button_to "일괄 신청", class_statuses_reserve_to_apply_path(id: 78), method: :get%>
+
+			<tr>
+			  <th>삭제</th>
+			  <th>이수 구분</th>
+			  <th>과목 번호</th>
+			  <th>과목 명</th>
+			  <th>개설 학과</th>
+			  <th>대상 학년</th>
+			  <th>학점</th>
+			  <th>담당 교수</th>
+			  <th>강의시간</th>
+			  <th>제한 인원</th>	
+
+			  <th colspan="3"></th>
+			</tr>
+		  </thead>
+
+		  <tbody>
+			<% @my_reserve_class_lists.each do |class_list| %>
+			  <tr>
+				<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
+				<td><%= class_list.class_list.classify %></td>
+				<td><%= class_list.class_list.sub_num %></td>
+				<td><%= class_list.class_list.c_name %></td>
+				<td><%= class_list.class_list.department.dep_name%></td>
+				<td><%= class_list.class_list.target_grade %></td>
+				<td><%= class_list.class_list.credit %></td>
+				<td><%= class_list.class_list.professor.pro_name %></td>
+				<%class_lecture = class_list.class_list.lecture_time%>
+				<% class_day_ko = class_list.class_list.day_to_dayko %>
+
+				<td><% class_day_ko.each do |day|%>
+						<%= day %>
+					<% end %></td>
+				<td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
+			  </tr>
+			<% end %>
+		  </tbody>
+		</table>
+	</div>
+</div>
+
+<div>
+	<h1>
+		시간표 현황
+	</h1>
+	<table class="box2" border="1"bordercolor="gray">
+		<thead>
+			<tr>
+				<td><%= %></td>
+				<td><%= "월"%></td>
+				<td><%= "화"%></td>
+				<td><%= "수"%></td>
+				<td><%= "목"%></td>
+				<td><%= "금"%></td>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% i = 1 %>
+			<% while i < 9 %>
+				<% m = "m#{i}"; t = "t#{i}"; w = "w#{i}"; th = "th#{i}"; f = "f#{i}"%>
+				<tr>
+					<td><%= i %></td>
+					<td>
+						<% @my_class_lists.each do |apply_class| %>
+							<% if apply_class.class_list.lecture_time.include? m %>
+								<%= apply_class.class_list.sub_num%>
+							<% end %>
+						<% end %>
+					</td>
+					<td>
+						<% @my_class_lists.each do |apply_class| %>
+							<% if apply_class.class_list.lecture_time.include? t %>
+								<%= apply_class.class_list.sub_num%>
+							<% end %>
+						<% end %>
+					</td>
+					<td>
+						<% @my_class_lists.each do |apply_class| %>
+							<% if apply_class.class_list.lecture_time.include? w %>
+								<%= apply_class.class_list.sub_num%>
+							<% end %>
+						<% end %>
+					</td>
+					<td>
+						<% @my_class_lists.each do |apply_class| %>
+							<% if apply_class.class_list.lecture_time.include? th %>
+								<%= apply_class.class_list.sub_num%>
+							<% end %>
+						<% end %>
+					</td>
+					<td>
+						<% @my_class_lists.each do |apply_class| %>
+							<% if apply_class.class_list.lecture_time.include? f %>
+								<%= apply_class.class_list.sub_num%>
+							<% end %>
+						<% end %>
+					</td>
+				</tr>
+				<% i += 1 %>
+			<% end %>
+		</tbody>
+
+
+	</table>
+</div>
+<br>
+	
 </body>
 </html>
-
-<h1>개설강좌</h1>
-<table border="1"bordercolor="gray" width= "70%" height= "100">
-  <thead>
-    <tr>
-	  <th>예약</th>
-	  <th>신청</th>
-      <th>이수 구분</th>
-      <th>과목 번호</th>
-      <th>과목 명</th>
-	  <th>개설 학과</th>
-	  <th>대상 학년</th>
-      <th>학점</th>
-      <th>담당 교수</th>
-      <th>강의시간</th>
-      <th>제한 인원</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @class_lists.each do |class_list| %>
-	  <tr>
-		<td><%= button_to "예약", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, :status => "예약"})%></td>
-		<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id})%></td>
-		<td><%= class_list.classify %></td>
-		<td><%= class_list.sub_num %></td>
-		<td><%= class_list.c_name %></td>
-		<td><%= class_list.department.dep_name%></td>
-		<td><%= class_list.target_grade %></td>
-		<td><%= class_list.credit %></td>
-        <td><%= class_list.professor.pro_name %></td>
-        <td><%= class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.id, status: "신청").size %> / <%= class_list.limit_num %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-<%= link_to 'New Class List', new_class_list_path %>
-
-<br>
-<br>
-
-<h1>수강 확정내역</h1>
-<table border="1"bordercolor="gray" width= "70%" height= "100">
-  <thead>
-    <tr>
-	  <th>삭제</th>
-      <th>이수 구분</th>
-      <th>과목 번호</th>
-      <th>과목 명</th>
-	  <th>개설 학과</th>
-	  <th>대상 학년</th>
-      <th>학점</th>
-      <th>담당 교수</th>
-      <th>강의시간</th>
-      <th>제한 인원</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @my_class_lists.each do |class_list| %>
-	  <tr>
-		<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
-		<td><%= class_list.class_list.classify %></td>
-		<td><%= class_list.class_list.sub_num %></td>
-		<td><%= class_list.class_list.c_name %></td>
-		<td><%= class_list.class_list.department.dep_name%></td>
-		<td><%= class_list.class_list.target_grade %></td>
-		<td><%= class_list.class_list.credit %></td>
-        <td><%= class_list.class_list.professor.pro_name %></td>
-        <td><%= class_list.class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>수강 대기내역</h1>
-<table border="1"bordercolor="gray" width= "70%" height= "100">
-  <thead>
-    <tr>
-	  <th>삭제</th>
-      <th>이수 구분</th>
-      <th>과목 번호</th>
-      <th>과목 명</th>
-	  <th>개설 학과</th>
-	  <th>대상 학년</th>
-      <th>학점</th>
-      <th>담당 교수</th>
-      <th>강의시간</th>
-      <th>제한 인원</th>
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @my_waiting_class_lists.each do |class_list| %>
-	  <tr>
-		<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
-		<td><%= class_list.class_list.classify %></td>
-		<td><%= class_list.class_list.sub_num %></td>
-		<td><%= class_list.class_list.c_name %></td>
-		<td><%= class_list.class_list.department.dep_name%></td>
-		<td><%= class_list.class_list.target_grade %></td>
-		<td><%= class_list.class_list.credit %></td>
-        <td><%= class_list.class_list.professor.pro_name %></td>
-        <td><%= class_list.class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>수강신청 예약내역</h1>
-<table border="1"bordercolor="gray" width= "70%" height= "100">
-  <thead>
-	  <td><%= button_to "일괄 신청", class_statuses_reserve_to_apply_path(id: 78), method: :get%>
-	  
-    <tr>
-	  <th>삭제</th>
-      <th>이수 구분</th>
-      <th>과목 번호</th>
-      <th>과목 명</th>
-	  <th>개설 학과</th>
-	  <th>대상 학년</th>
-      <th>학점</th>
-      <th>담당 교수</th>
-      <th>강의시간</th>
-      <th>제한 인원</th>	
-
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @my_reserve_class_lists.each do |class_list| %>
-	  <tr>
-		<td><%= button_to "삭제", class_status_path(id: class_list.id), method: :delete%></td>
-		<td><%= class_list.class_list.classify %></td>
-		<td><%= class_list.class_list.sub_num %></td>
-		<td><%= class_list.class_list.c_name %></td>
-		<td><%= class_list.class_list.department.dep_name%></td>
-		<td><%= class_list.class_list.target_grade %></td>
-		<td><%= class_list.class_list.credit %></td>
-        <td><%= class_list.class_list.professor.pro_name %></td>
-        <td><%= class_list.class_list.lecture_time %></td>
-        <td><%= ClassStatus.where(class_list_id: class_list.class_list.id).size %> / <%= class_list.class_list.limit_num %></td> 
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<h1>
-	시간표 현황
-</h1>
-<table border="1"bordercolor="gray">
-	<thead>
-		<tr>
-			<td><%= %></td>
-			<td><%= "월"%></td>
-			<td><%= "화"%></td>
-			<td><%= "수"%></td>
-			<td><%= "목"%></td>
-			<td><%= "금"%></td>
-		</tr>
-	</thead>
-	
-	<tbody>
-		<% i = 1 %>
-		<% while i < 9 %>
-			<% m = "m#{i}"; t = "t#{i}"; w = "w#{i}"; th = "th#{i}"; f = "f#{i}"%>
-			<tr>
-				<td><%= i %></td>
-				<td>
-					<% @my_class_lists.each do |apply_class| %>
-						<% if apply_class.class_list.lecture_time.include? m %>
-							<%= apply_class.class_list.sub_num%>
-						<% end %>
-					<% end %>
-				</td>
-				<td>
-					<% @my_class_lists.each do |apply_class| %>
-						<% if apply_class.class_list.lecture_time.include? t %>
-							<%= apply_class.class_list.sub_num%>
-						<% end %>
-					<% end %>
-				</td>
-				<td>
-					<% @my_class_lists.each do |apply_class| %>
-						<% if apply_class.class_list.lecture_time.include? w %>
-							<%= apply_class.class_list.sub_num%>
-						<% end %>
-					<% end %>
-				</td>
-				<td>
-					<% @my_class_lists.each do |apply_class| %>
-						<% if apply_class.class_list.lecture_time.include? th %>
-							<%= apply_class.class_list.sub_num%>
-						<% end %>
-					<% end %>
-				</td>
-				<td>
-					<% @my_class_lists.each do |apply_class| %>
-						<% if apply_class.class_list.lecture_time.include? f %>
-							<%= apply_class.class_list.sub_num%>
-						<% end %>
-					<% end %>
-				</td>
-			</tr>
-			<% i += 1 %>
-		<% end %>
-	</tbody>
-	
-	
-</table>
-
-
-
-<br>
 

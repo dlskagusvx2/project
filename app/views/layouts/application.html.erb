@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>GoormRailsApp</title>
+<html lang="ko">
+<head>
+	<title>GoormRailsApp</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="application.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,12 +13,17 @@
   </head>
 
   <body>
+	  
 	  	<nav class="navtitle">
 			<ul>
 				<li>
 					<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
 				</li>	
+				
 			</ul>
+			<h1 class="h1title">
+					2022학년도 동계계절수업 수강신청
+				</h1>
 			<div>
 				<% if student_signed_in? %>
 					<%= "#{current_student.s_name} | #{current_student.department.dep_name} | #{current_student.grade}학년" %>
@@ -35,6 +43,7 @@
 				  <% else %>
 					<%= link_to "로그인", student_session_path %>
 					<%= link_to "회원가입", "/students/sign_up" %>
+					<a href="http://sugang.deu.ac.kr:8080/Common/images/login_con_bg.jpg"></a>
 				  <% end %>
 				</li>
 			</ul>

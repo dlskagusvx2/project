@@ -23,5 +23,25 @@ class ClassStatus < ApplicationRecord
 		end
 		return false
 	end
+	
+	def time_duplicate?
+		@my_applicate_class = ClassStatus.where(student_id: self.student_id, status: "신청")
+		day = ['m','t','w','th','f']
+		app_day = self.class_list.lecture_time
+		for i in 1..8
+			for a in day
+				x = a + "#{i}"
+				@my_applicate_class.each do |my_class|
+					class_day = my_class.class_list.lecture_time
+					is_class_day = class_day.include? x
+					is_app_day = app_day.include? x
+					if is_class_day && is_app_day
+						return true
+					end
+				end
+			end
+		end
+		return false
+	end
 
 end

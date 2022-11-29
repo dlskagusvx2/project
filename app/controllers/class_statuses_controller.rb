@@ -19,6 +19,7 @@ class ClassStatusesController < ApplicationController
   def index
     @class_statuses = ClassStatus.all
 	@my_reserve_class = ClassStatus.where(student_id: current_student.id, status: "예약")
+	
   end
 
   # GET /class_statuses/1 or /class_statuses/1.json
@@ -45,6 +46,8 @@ class ClassStatusesController < ApplicationController
 				@class_status.status = "대기"
 				@class_status.save
 				format.html { redirect_to class_lists_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
+			elsif @class_status.time_duplicate?
+				format.html {redirect_to class_lists_path, notice: "시간표가 중복되었습니다."}
 			else 
 				@class_status.save
 				format.html { redirect_to class_lists_path, notice: "강의 신청이 완료되었습니다." }

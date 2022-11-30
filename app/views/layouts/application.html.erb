@@ -13,8 +13,8 @@
   </head>
 
   <body>
-	  
-	  	<nav class="navtitle">
+	  <% if student_signed_in? %>
+	  <nav class="navtitle">
 			<ul>
 				<li>
 					<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
@@ -25,12 +25,9 @@
 					2022학년도 동계계절수업 수강신청
 				</h1>
 			<div>
-				<% if student_signed_in? %>
-					<%= "#{current_student.s_name} | #{current_student.department.dep_name} | #{current_student.grade}학년" %>
-				<% end %>
+				<%= "#{current_student.s_name} | #{current_student.department.dep_name} | #{current_student.grade}학년" %>
 			</div>
 		</nav>
-	  <% if student_signed_in? %>
 		<nav class="navbar">
 			<ul class="navbar__menu">
 				<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>

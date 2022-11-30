@@ -27,20 +27,36 @@
 
 </head>
 <body>
-	
-
-
 <div class ="combine">
 	<h1>개설강좌</h1>
-	<div>
-		과목 유형&nbsp;
-		<input type="radio" name="checked_classify" value="전체" checked="checked">전체&nbsp;&nbsp;
-		<input type="radio" name="checked_classify" value="공통교양">공통 교양
-		<input type="radio" name="checked_classify" value="자유교양">자유 교양
-		<input type="radio" name="checked_classify" value="균형교양">균형 교양
-		<input type="radio" name="checked_classify" value="전공선택">전공 선택
-		<input type="radio" name="checked_classify" value="전공필수">전공 필수
-	</div>
+	<form>
+		<fieldset>
+			<legend>과목 유형</legend>
+			<input type="radio" name="checked_classify" id="all" value="전체" checked="checked">전체&nbsp;&nbsp;
+			<input type="radio" name="checked_classify" id="common" value="공통교양">공통 교양
+			<input type="radio" name="checked_classify" id="free" value="자유교양">자유 교양
+			<input type="radio" name="checked_classify" id="bal" value="균형교양">균형 교양
+			<input type="radio" name="checked_classify" id="maj_sel" value="전공선택">전공 선택
+			<input type="radio" name="checked_classify" id="maj_req" value="전공필수">전공 필수
+			
+		</fieldset>
+		
+	</form>
+	
+	<script>
+		var checked_classify = document.querySelector("input[name='checked_classify']:checked").value
+		var classify = document.getElementsByName("checked_classify")
+		for(i=0 ; i < classify.length ; i++){
+			classify[i].addEventListener('click', function () {
+				switch(this.id){
+					case "common":
+						alert("공통교양");
+						break;
+				}
+			});
+		}
+		
+	</script>
 	<br>
 	<div class="box1">
 
@@ -229,7 +245,7 @@
 		</table>
 	</div>
 </div>
-
+<br>
 <div>
 	<h1>
 		시간표 현황

@@ -1,0 +1,70 @@
+<p id="notice"><%= notice %></p>
+
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		
+	</head>
+	<body>
+		<h1>개인별 미이수 과목</h1>
+		<p>1.총 취득학점 현황</p>
+		<table border="1"bordercolor="gray">
+		  <thead>
+			<tr>
+			  <th rowspan="2">총 졸업요구 학점</th>
+			  <th colspan="4">이수 학점</th>
+			  <th colspan="4">수강신청 학점</th>
+			  <th rowspan="2">총 취득(예정)</th>
+			  <th rowspan="2">사정 학점</th>
+			</tr>
+			  <th>일반</th>
+			  <th>편입</th>
+			  <th>인턴</th>
+			  <th>소계</th>
+			  <th>정규</th>
+			  <th>재수강</th>
+			  <th>계절</th>
+			  <th>소계</th>
+		  </thead>
+			
+			<tbody>
+				<tr>
+					<td>132.00</td>
+					
+					<td><%@completion_credit = 0%>
+						<% @my_completion_class.each do |class_list|%>
+							<%@completion_credit = @completion_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @completion_credit %>
+					</td>
+					<td></td>
+					<td></td>
+					<td><%@completion_credit = 0%>
+						<% @my_completion_class.each do |class_list|%>
+							<%@completion_credit = @completion_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @completion_credit %></td>
+
+					<td><%@application_credit = 0%>
+						<% @my_applicate_class.each do |class_list|%>
+							<%@application_credit = @application_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @application_credit %>
+					</td>
+					<td></td>
+					<td></td>
+					<td><%@application_credit = 0%>
+						<% @my_applicate_class.each do |class_list|%>
+							<%@application_credit = @application_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @application_credit %>
+					</td>
+					<td><%= @completion_credit + @application_credit%></td>
+					<td><%=132.00 - @completion_credit + @application_credit%></td>
+				</tr>
+			</tbody>
+		</table>
+		  
+	</body>
+</html>
+	

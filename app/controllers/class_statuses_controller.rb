@@ -1,5 +1,10 @@
 class ClassStatusesController < ApplicationController
   before_action :set_class_status, only: %i[ show edit update destroy ]
+	
+	def credit_completion
+		@my_completion_class = ClassStatus.where(student_id: current_student.id, status: "수료")
+		@my_applicate_class = ClassStatus.where(student_id: current_student.id, status: "신청")
+	end
 
 	def reserve_to_apply
 		@my_reserve_class = ClassStatus.where(student_id: current_student.id, status: "예약")

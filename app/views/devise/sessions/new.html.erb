@@ -1,52 +1,83 @@
-<style>
+<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<style>
+		
 	body{
 		background: url("http://sugang.deu.ac.kr:8080/Common/images/login_con_bg.jpg");	
-		background-size: 100%
+		background-repeat: no-repeat;
+		position: relative;
+		margin: 0;
+		padding: 0;
+		height: 200%;
+		width: 100%;
 	}
 	.logbox {
-		background: white;
+		background-size: cover;
 		width: 500px;
-
+		padding-left: 600px;
 	}
 	.logtitle {
 		display: flex;
+		background: white;
+		background-color: rgba( 255, 255, 255, 0.5 );
+
 	}
-</style>
+	.logbox2 {
+		background: white;
+		background-color: rgba( 255, 255, 255, 0.5 );		
+		}
+	</style>
+
+</head> 
 
 <body>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<div class="logbox">
 		<div class="logtitle">
 			<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png">
 			<h1 style="color:#1261aa;">수강신청시스템</h1>
 		</div>
+		<div class="logbox2">
+			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+			  <div class="field">
+				<%= f.label :아이디 %><br />
+				<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+			  </div>
 
+			  <div class="field">
+				<%= f.label :비밀번호 %><br />
+				<%= f.password_field :password, autocomplete: "current-password" %>
+			  </div>
 
-		<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-		  <div class="field">
-			<%= f.label :아이디 %><br />
-			<%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-		  </div>
+			  <% if devise_mapping.rememberable? %>
+				<div class="field">
+				  <%= f.check_box :remember_me %>
+				  <%= f.label :아이디저장 %>
+				</div>
+			  <% end %>
 
-		  <div class="field">
-			<%= f.label :비밀번호 %><br />
-			<%= f.password_field :password, autocomplete: "current-password" %>
-		  </div>
+			  <div class="actions">
+				<%= f.submit "로그인" %>
+			  </div>
+			<% end %>
 
-		  <% if devise_mapping.rememberable? %>
-			<div class="field">
-			  <%= f.check_box :remember_me %>
-			  <%= f.label :아이디저장 %>
-			</div>
-		  <% end %>
-
-		  <div class="actions">
-			<%= f.submit "로그인" %>
-		  </div>
-		<% end %>
-
-		<%= render "devise/shared/links" %>
+			<%= render "devise/shared/links" %>
+		</div>	
 
 	</div>	
 </body>
-
+</html>
 

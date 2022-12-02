@@ -19,9 +19,18 @@ a {
 
 
 a:hover {
-  color: #fff;
-  background-color: #000; }
-
+  text-decoration: none !important;
+}
+.navbar__menu > li:hover{
+	color: none;
+  	background-color: #0f397a;
+}
+.navbar__menu > li{
+	text-align: center;
+}
+.navbar__menu > li > a{
+	padding: 10px 0;
+}
 th {
   padding-bottom: 5px; }
 

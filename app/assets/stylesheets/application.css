@@ -56,6 +56,7 @@
     position: relative;
     background: #1764dc;
     height: 38px;
+	width: 100%;
     z-index: 22221;
 	display: flex;
 	flex-direction: row;
@@ -69,13 +70,21 @@
 	list-style: none;
 	padding-left: 0;
 	color: #FFF;
+	height: 100%;
+	width: 100%;
 	
 }
 
 .navbar__menu > li{
-	padding: 30px 50px;
-	display:inline;
+	height:100%;
+	width: 19.91%;
+	margin:0;
+	float: left;
 }
 
-
+a{
+	display: block;
+	text-decoration: none;
+	color: inherit;
+}
 

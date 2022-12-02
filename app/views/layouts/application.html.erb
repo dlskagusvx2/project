@@ -10,6 +10,7 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
@@ -17,7 +18,9 @@
 	  <nav class="navtitle">
 			<ul>
 				<li>
-					<img src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+					<a href="http://teamproject-wghck.run.goorm.io/">
+						<img class="img-page" src="http://sugang.deu.ac.kr:8080/Common/images/logo.png" alt="동의대 수강신청시스템">
+					</a>
 				</li>	
 				
 			</ul>
@@ -32,8 +35,9 @@
 			<ul class="navbar__menu">
 				<li><a href="http://teamproject-wghck.run.goorm.io/">공지사항</a></li>
 				<li><a href="http://teamproject-wghck.run.goorm.io/class_lists">수강신청</a></li>
-				<li><a href="">학점이수현황</a></li>
+				<li><a href="https://teamproject-wghck.run.goorm.io/class_statuses/78/credit_completion	">학점이수현황</a></li>
 				<li><a href="https://teamproject-wghck.run.goorm.io/class_statuses/78/retake">재수강신청</a></li>
+				
 				<li>
 				  <% if student_signed_in? %>
 					<%= link_to "로그아웃", destroy_student_session_path, method: :delete %>

@@ -2,14 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
 .box1{
 	overflow:scroll; 
 	overflow-x: hidden;
+	height: 300px;
 }
 .box2{
 	text-align: center;
 	width: 30%;
 	height: 100%;
+	
 }
 .combine{
 	float:left;
@@ -26,4 +29,7 @@
 
 .box3 > table {
 	width: 100%
+}
+.timebox {
+	margin-right: 40px;
 }

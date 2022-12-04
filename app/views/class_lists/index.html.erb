@@ -106,7 +106,9 @@
 	</div>
 
 	<br>
-	<%= link_to 'New Class List', new_class_list_path %>
+	<%if current_student.id == 6%>
+		<%= link_to 'New Class List', new_class_list_path %>
+	<% end %>
 	<br>
 	<br>
 	<br>

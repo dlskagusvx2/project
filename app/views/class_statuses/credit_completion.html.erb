@@ -2,241 +2,246 @@
 
 <!DOCTYPE html>
 <html lang="ko">
-	<head>
-		<style>
-			table {
-			border: 1px solid #767676;
-			border-collapse:collapse;
-			text-align: center;
-			}
-			#subject {
-				position:absolute;
-				left:50%;
-				top: 70%;
-				transform: translate(-50%,-50%);
-				
-			}
-			
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="credit_completion.scss">
+	<title>Nav bar</title>
+	<script src="class_status"></script>
+	<style>
+		table {
+		border: 1px solid #767676;
+		border-collapse:collapse;
+		text-align: center;
+		}
+		#subject {
+			position:absolute;
+			left:50%;
+			top: 70%;
+			transform: translate(-50%,-50%);
 
-			
-		</style>
-	</head>
-	<body>
-		<div class="combine" id="subject">
-			
-		
-			<h1>개인별 미이수 과목</h1>
-			<p>1.총 취득학점 현황</p>
-			<div class="box">
-				<table border="1"bordercolor="gray">
-			  <thead>
+		}
+
+
+
+	</style>
+</head>
+<body>
+	<div class="combine" id="subject">
+
+
+		<h1>개인별 미이수 과목</h1>
+		<p>1.총 취득학점 현황</p>
+		<div class="box">
+			<table border="1"bordercolor="gray">
+		  <thead>
+			<tr>
+			  <th rowspan="2">총 졸업요구 학점</th>
+			  <th colspan="4">이수 학점</th>
+			  <th colspan="4">수강신청 학점</th>
+			  <th rowspan="2">총 취득(예정)</th>
+			  <th rowspan="2">사정 학점</th>
+			</tr>
+			  <th>일반</th>
+			  <th>편입</th>
+			  <th>인턴</th>
+			  <th>소계</th>
+			  <th>정규</th>
+			  <th>재수강</th>
+			  <th>계절</th>
+			  <th>소계</th>
+		  </thead>
+
+			<tbody>
 				<tr>
-				  <th rowspan="2">총 졸업요구 학점</th>
-				  <th colspan="4">이수 학점</th>
-				  <th colspan="4">수강신청 학점</th>
-				  <th rowspan="2">총 취득(예정)</th>
-				  <th rowspan="2">사정 학점</th>
+					<% @total_credit = 132.00%>
+					<td><%= @total_credit%></td>
+
+					<td><% @completion_credit = 0%>
+						<% @my_completion_class.each do |class_list|%>
+							<% @completion_credit = @completion_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @completion_credit %>
+					</td>
+					<td></td>
+					<td></td>
+					<td><% @completion_credit = 0%>
+						<% @my_completion_class.each do |class_list|%>
+							<% @completion_credit = @completion_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @completion_credit %></td>
+
+					<td><% @application_credit = 0%>
+						<% @my_applicate_class.each do |class_list|%>
+							<% @application_credit = @application_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @application_credit %>
+					</td>
+					<td></td>
+					<td></td>
+					<td><% @application_credit = 0%>
+						<% @my_applicate_class.each do |class_list|%>
+							<% @application_credit = @application_credit + class_list.class_list.credit%>
+						<% end %>
+						<%= @application_credit %>
+					</td>
+					<td><%= @completion_credit + @application_credit%></td>
+					<td><%= (@completion_credit + @application_credit) - @total_credit%></td>
 				</tr>
-				  <th>일반</th>
-				  <th>편입</th>
-				  <th>인턴</th>
-				  <th>소계</th>
-				  <th>정규</th>
-				  <th>재수강</th>
-				  <th>계절</th>
-				  <th>소계</th>
-			  </thead>
+			</tbody>
+		</table>
+		</div>
 
-				<tbody>
-					<tr>
-						<% @total_credit = 132.00%>
-						<td><%= @total_credit%></td>
-
-						<td><% @completion_credit = 0%>
-							<% @my_completion_class.each do |class_list|%>
-								<% @completion_credit = @completion_credit + class_list.class_list.credit%>
-							<% end %>
-							<%= @completion_credit %>
-						</td>
-						<td></td>
-						<td></td>
-						<td><% @completion_credit = 0%>
-							<% @my_completion_class.each do |class_list|%>
-								<% @completion_credit = @completion_credit + class_list.class_list.credit%>
-							<% end %>
-							<%= @completion_credit %></td>
-
-						<td><% @application_credit = 0%>
-							<% @my_applicate_class.each do |class_list|%>
-								<% @application_credit = @application_credit + class_list.class_list.credit%>
-							<% end %>
-							<%= @application_credit %>
-						</td>
-						<td></td>
-						<td></td>
-						<td><% @application_credit = 0%>
-							<% @my_applicate_class.each do |class_list|%>
-								<% @application_credit = @application_credit + class_list.class_list.credit%>
-							<% end %>
-							<%= @application_credit %>
-						</td>
-						<td><%= @completion_credit + @application_credit%></td>
-						<td><%= (@completion_credit + @application_credit) - @total_credit%></td>
-					</tr>
-				</tbody>
-			</table>
-			</div>
-			
-			<br>	
-			<p>2. 영역별 사정 현황</p>
-			<div class="box">
-				<table border="1"bordercolor="gray">
-				<thead>
-					<tr>
-						<th rowspan="2">이수구분</th>
-						<th rowspan="2">요구학점</th>
-						<th rowspan="2">이수학점</th>
-						<th colspan="4">수강신청 학점</th>
-						<th rowspan="2">총취득(예정)</th>
-						<th rowspan="2">사정학점</th>
-						<th rowspan="2">비고</th>
-					</tr>
-					<th>정규</th>
-					<th>재수강</th>
-					<th>계절</th>
-					<th>소계</th>
-				</thead>
-				<tbody>
-					<%@credit1 = 0; @credit2 = 0; @credit3 = 0; @credit4 = 0; @credit5 = 0; @credit6 = 0; @credit7 = 0%>
-					<%@my_completion_class.each do |class_list|%>
-						<%if class_list.class_list.classify == "공통교양"%>
-							<%@credit1 = @credit1 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "균형교양"%>
-							<%@credit2 = @credit2 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "자율교양"%>
-							<%@credit3 = @credit3 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "공학소양"%>
-							<%@credit4 = @credit4 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "계열교양"%>
-							<%@credit5 = @credit5 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "전공 선택"%>
-							<%@credit6 = @credit6 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "전공필수"%>
-							<%@credit7 = @credit7 + class_list.class_list.credit%>
-						<%end%>
+		<br>	
+		<p>2. 영역별 사정 현황</p>
+		<div class="box">
+			<table border="1"bordercolor="gray">
+			<thead>
+				<tr>
+					<th rowspan="2">이수구분</th>
+					<th rowspan="2">요구학점</th>
+					<th rowspan="2">이수학점</th>
+					<th colspan="4">수강신청 학점</th>
+					<th rowspan="2">총취득(예정)</th>
+					<th rowspan="2">사정학점</th>
+					<th rowspan="2">비고</th>
+				</tr>
+				<th>정규</th>
+				<th>재수강</th>
+				<th>계절</th>
+				<th>소계</th>
+			</thead>
+			<tbody>
+				<%@credit1 = 0; @credit2 = 0; @credit3 = 0; @credit4 = 0; @credit5 = 0; @credit6 = 0; @credit7 = 0%>
+				<%@my_completion_class.each do |class_list|%>
+					<%if class_list.class_list.classify == "공통교양"%>
+						<%@credit1 = @credit1 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "균형교양"%>
+						<%@credit2 = @credit2 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "자율교양"%>
+						<%@credit3 = @credit3 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "공학소양"%>
+						<%@credit4 = @credit4 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "계열교양"%>
+						<%@credit5 = @credit5 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "전공 선택"%>
+						<%@credit6 = @credit6 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "전공필수"%>
+						<%@credit7 = @credit7 + class_list.class_list.credit%>
 					<%end%>
-					<%@credit11 = 0; @credit22 = 0; @credit33 = 0; @credit44 = 0; @credit55 = 0; @credit66 = 0; @credit77 = 0%>
-					<%@my_applicate_class.each do |class_list|%>
-						<%if class_list.class_list.classify == "공통교양"%>
-							<%@credit11 = @credit11 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "균형교양"%>
-							<%@credit22 = @credit22 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "자율교양"%>
-							<%@credit33 = @credit33 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "공학소양"%>
-							<%@credit44 = @credit44 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "계열교양"%>
-							<%@credit55 = @credit55 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "전공 선택"%>
-							<%@credit66 = @credit66 + class_list.class_list.credit%>
-						<%elsif class_list.class_list.classify == "전공필수"%>
-							<%@credit77 = @credit77 + class_list.class_list.credit%>
-						<%end%>
+				<%end%>
+				<%@credit11 = 0; @credit22 = 0; @credit33 = 0; @credit44 = 0; @credit55 = 0; @credit66 = 0; @credit77 = 0%>
+				<%@my_applicate_class.each do |class_list|%>
+					<%if class_list.class_list.classify == "공통교양"%>
+						<%@credit11 = @credit11 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "균형교양"%>
+						<%@credit22 = @credit22 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "자율교양"%>
+						<%@credit33 = @credit33 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "공학소양"%>
+						<%@credit44 = @credit44 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "계열교양"%>
+						<%@credit55 = @credit55 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "전공 선택"%>
+						<%@credit66 = @credit66 + class_list.class_list.credit%>
+					<%elsif class_list.class_list.classify == "전공필수"%>
+						<%@credit77 = @credit77 + class_list.class_list.credit%>
 					<%end%>
-					<tr>
-						<td>공통교양</td>
-						<td>17.50</td>
-						<td><%=@credit1%></td>
-						<td><%=@credit11%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit11%></td>
-						<td><%=@credit1 + @credit11%></td>
-						<td><%=(@credit1 + @credit11) - 17.50%></td>
-						<td></td>
-					</tr>
-					<tr>
-						<td>균형교양</td>
-						<td>8</td>
-						<td><%=@credit2%></td>
-						<td><%=@credit22%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit22%></td>
-						<td><%=@credit2 + @credit22%></td>
-						<td><%=(@credit2 + @credit22) - 8%></td>
-						<td></td>
-					</tr>
+				<%end%>
+				<tr>
+					<td>공통교양</td>
+					<td>17.50</td>
+					<td><%=@credit1%></td>
+					<td><%=@credit11%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit11%></td>
+					<td><%=@credit1 + @credit11%></td>
+					<td><%=(@credit1 + @credit11) - 17.50%></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td>균형교양</td>
+					<td>8</td>
+					<td><%=@credit2%></td>
+					<td><%=@credit22%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit22%></td>
+					<td><%=@credit2 + @credit22%></td>
+					<td><%=(@credit2 + @credit22) - 8%></td>
+					<td></td>
+				</tr>
 
-					<tr>
-						<td>자율교양</td>
-						<td>6</td>
-						<td><%=@credit3%></td>
-						<td><%=@credit33%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit33%></td>
-						<td><%=@credit3 + @credit33%></td>
-						<td><%=(@credit3 + @credit33) - 6%></td>
-						<td></td>
-					</tr>
+				<tr>
+					<td>자율교양</td>
+					<td>6</td>
+					<td><%=@credit3%></td>
+					<td><%=@credit33%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit33%></td>
+					<td><%=@credit3 + @credit33%></td>
+					<td><%=(@credit3 + @credit33) - 6%></td>
+					<td></td>
+				</tr>
 
-					<tr>
-						<td>공학소양</td>
-						<td>0</td>
-						<td><%=@credit4%></td>
-						<td><%=@credit44%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit44%></td>
-						<td><%=@credit4 + @credit44%></td>
-						<td><%=(@credit4 + @credit44) - 0%></td>
-						<td></td>
-					</tr>
+				<tr>
+					<td>공학소양</td>
+					<td>0</td>
+					<td><%=@credit4%></td>
+					<td><%=@credit44%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit44%></td>
+					<td><%=@credit4 + @credit44%></td>
+					<td><%=(@credit4 + @credit44) - 0%></td>
+					<td></td>
+				</tr>
 
-					<tr>
-						<td>계열교양</td>
-						<td>6</td>
-						<td><%=@credit5%></td>
-						<td><%=@credit55%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit55%></td>
-						<td><%=@credit5 + @credit55%></td>
-						<td><%=(@credit5 + @credit55) - 6%></td>
-						<td></td>
-					</tr>
+				<tr>
+					<td>계열교양</td>
+					<td>6</td>
+					<td><%=@credit5%></td>
+					<td><%=@credit55%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit55%></td>
+					<td><%=@credit5 + @credit55%></td>
+					<td><%=(@credit5 + @credit55) - 6%></td>
+					<td></td>
+				</tr>
 
-					<tr>
-						<td>전공필수</td>
-						<td>21</td>
-						<td><%=@credit6%></td>
-						<td><%=@credit66%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit66%></td>
-						<td><%=@credit6 + @credit66%></td>
-						<td><%=(@credit6 + @credit66) - 21%></td>
-						<td></td>
-					</tr>
+				<tr>
+					<td>전공필수</td>
+					<td>21</td>
+					<td><%=@credit6%></td>
+					<td><%=@credit66%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit66%></td>
+					<td><%=@credit6 + @credit66%></td>
+					<td><%=(@credit6 + @credit66) - 21%></td>
+					<td></td>
+				</tr>
 
-					<tr>
-						<td>전공선택</td>
-						<td>60</td>
-						<td><%=@credit7%></td>
-						<td><%=@credit77%></td>
-						<td></td>
-						<td></td>
-						<td><%=@credit77%></td>
-						<td><%=@credit7 + @credit77%></td>
-						<td><%=(@credit7 + @credit77) - 60 %></td>
-						<td></td>
-					</tr>
-				</tbody>
-			</table>
-			</div>
-			
-		</div>  
-	</body>
+				<tr>
+					<td>전공선택</td>
+					<td>60</td>
+					<td><%=@credit7%></td>
+					<td><%=@credit77%></td>
+					<td></td>
+					<td></td>
+					<td><%=@credit77%></td>
+					<td><%=@credit7 + @credit77%></td>
+					<td><%=(@credit7 + @credit77) - 60 %></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+
+	</div>  
+</body>
 </html>
 	

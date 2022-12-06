@@ -5,17 +5,7 @@ class ClassStatusesController < ApplicationController
 		@my_completion_class = ClassStatus.where(student_id: current_student.id, status: "수료")
 		@my_applicate_class = ClassStatus.where(student_id: current_student.id, status: "신청")
 		
-		@completion_common_culture = @my_completion_class.where(classify: "공통교양")
-		@completion_balanced_culture = @my_completion_class.where(classify: "균형교양")
-		@completion_autonomous_culture = @my_completion_class.where(classify: "자율교양")
-		@completion_engineering_literacy = @my_completion_class.where(classify: "공학소양")
-		@completion_affiliation_culture = @my_completion_class.where(classify: "계열교양")
-
-		@application_common_culture = @my_applicate_class.where(classify: "공통교양")
-		@application_balanced_culture = @my_applicate_class.where(classify: "균형교양")
-		@application_autonomous_culture = @my_applicate_class.where(classify: "자율교양")
-		@application_engineering_literacy = @my_applicate_class.where(classify: "공학소양")
-		@application_affiliation_culture = @my_applicate_class.where(classify: "계열교양")
+		
 	end
 
 	def reserve_to_apply
@@ -65,6 +55,8 @@ class ClassStatusesController < ApplicationController
 				format.html { redirect_to class_lists_path, notice: "강의인원이 초과되어 강의 대기 상태로 전환되었습니다." }
 			elsif @class_status.time_duplicate?
 				format.html {redirect_to class_lists_path, notice: "시간표가 중복되었습니다."}
+			elsif @class_status.credit_exceed?
+				format.html { redirect_to class_lists_path, notice: "신청가능 학점이 초과되었습니다." }
 			else 
 				@class_status.save
 				format.html { redirect_to class_lists_path, notice: "강의 신청이 완료되었습니다." }

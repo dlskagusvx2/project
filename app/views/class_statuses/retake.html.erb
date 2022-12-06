@@ -47,7 +47,7 @@
 					<% if class_list.retake?%>
 						<td></td>
 					<% else %>
-						<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.class_list_id, :status => "신청"})%></td>
+						<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.class_list_id})%></td>
 					<% end %>
 					<td><%= class_list.class_list.sub_num %></td>
 					<td><%= class_list.class_list.c_name%></td>

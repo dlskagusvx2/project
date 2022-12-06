@@ -43,5 +43,18 @@ class ClassStatus < ApplicationRecord
 		end
 		return false
 	end
+	
+	def credit_exceed?
+		@credit_sum = self.class_list.credit
+		@my_applicate_class.each do |app_class|
+			@credit_sum = @credit_sum + app_class.class_list.credit
+		end
+		if @credit_sum > 4
+			return true
+		else
+			return false
+		end
+	end
+	
 
 end

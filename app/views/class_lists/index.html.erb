@@ -83,8 +83,20 @@
 			<% @class_lists.each do |class_list| %>
 
 			  <tr>
-				<td><%= button_to "예약", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, :status => "예약"})%></td>
-				<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id})%></td>
+				  <%@my_completion_class = ClassStatus.where(student_id: current_student.id, status: "수료")%>
+				  <%@check = true%>
+				  <%@my_completion_class.each do |comp_class|%>
+				  	<%if comp_class.class_list_id == class_list.id%>
+				  		<%@check = false%>
+				  	<%end%>
+				  <%end%>
+				  <%if @check == true%>
+					<td><%= button_to "예약", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id, :status => "예약"})%></td>
+					<td><%= button_to "신청", class_statuses_path(class_status: { student_id: current_student.id, class_list_id: class_list.id})%></td>
+				  <%else%>
+				  	<td></td>
+				  	<td></td>
+				  <%end%>
 				<td><%= class_list.classify %></td>
 				<td><%= class_list.sub_num %></td>
 				<td><%= class_list.c_name %></td>
